@@ -49,12 +49,14 @@ class OutBot(commands.Bot):
                 await interaction.followup.send(RATE_LIMIT_MESSAGE, ephemeral=True)
                 return
             else:
-                await interaction.response.send_message(RATE_LIMIT_MESSAGE, ephemeral=True)
+                await interaction.response.send_message(
+                    RATE_LIMIT_MESSAGE, ephemeral=True
+                )
                 return
 
         else:
             if interaction.response.is_done():
-                await interaction.followup.send(ERROR_MESSAGE,ephemeral=True)
+                await interaction.followup.send(ERROR_MESSAGE, ephemeral=True)
 
             else:
                 await interaction.response.send_message(ERROR_MESSAGE, ephemeral=True)

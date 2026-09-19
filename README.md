@@ -29,7 +29,7 @@ OutBot is an open source, privacy respecting Discord utility bot built using **d
 
 OutBot uses **NO** privileged intents. Most popular discord bots use them. Member intents allows the bot to see members joining/leaving the server. Presence intent allows the bot to see member status (idle, offline, online, do not disturb et cetera). Message content intent allows the bot to see user messages. This is intent usually used for prefix commands. However OutBot does use discor's default intents.  
 
-For more information, please read: [OutBot's Privacy Policy](https://github.com/OutMyth-Dev/OutBot/blob/main/PRIVACY.md)
+For more information, please read: [OutBot's Privacy Policy](https://github.com/abdfjakshduwiyernm123/OutBot/blob/main/PRIVACY.md)
 
 OutBot's Current Version: **v0.5.8**
 
@@ -37,13 +37,13 @@ OutBot's Current Version: **v0.5.8**
 
 # Useful Links
 
-[OutBot's TOS](https://github.com/OutMyth-Dev/OutBot/blob/main/TERMS.md)  
+[OutBot's TOS](https://github.com/abdfjakshduwiyernm123/OutBot/blob/main/TERMS.md)  
 
-[OutBot's Privacy Policy](https://github.com/OutMyth-Dev/OutBot/blob/main/PRIVACY.md)  
+[OutBot's Privacy Policy](https://github.com/abdfjakshduwiyernm123/OutBot/blob/main/PRIVACY.md)  
 
-[OutBot's Security Policy](https://github.com/OutMyth-Dev/OutBot?tab=security-ov-file)  
+[OutBot's Security Policy](https://github.com/abdfjakshduwiyernm123/OutBot?tab=security-ov-file)  
 
-[OutBot's License](https://github.com/OutMyth-Dev/OutBot/?tab=MIT-1-ov-file)  
+[OutBot's License](https://github.com/abdfjakshduwiyernm123/OutBot/?tab=MIT-1-ov-file)  
 
 [OutBot's Invite link](https://discord.com/oauth2/authorize?client_id=1525595736706781384)  
 
@@ -126,7 +126,7 @@ pip3 install -r requirements/tests.txt
 ## Getting A Local Copy Of OutBot
 
 ```shell
-git clone https://github.com/OutMyth-Dev/OutBot.git
+git clone https://github.com/abdfjakshduwiyernm123/OutBot.git
 ```
 
 ```shell
@@ -196,5 +196,5 @@ Then choose if you want OutBot to your Discord server(s) or to your apps.
 # Developer notes
 
 To report any issues (other than security vulnerabilities) please open a GitHub issue, a ticket on OutMyth, or use /report.  
-Before reporting a security issue please read [OutBot's Security Policy](https://github.com/OutMyth-Dev/OutBot?tab=security-ov-file).  
+Before reporting a security issue please read [OutBot's Security Policy](https://github.com/abdfjakshduwiyernm123/OutBot?tab=security-ov-file).  
 Thank **you** for using OutBot! ❤️

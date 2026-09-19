@@ -24,8 +24,8 @@ By contributing to OutBot you agree to comply with OutBot's license, OutBot's Co
 ## Developer Rules  
 1) Do not add bugs or vulnerabilities intentially  
 2) Do not update documenation. Instead, explain what you think should be added to the docs
-3) Follow [OutBot's License](https://github.com/OutMyth-Dev/OutBot?tab=MIT-1-ov-file)
-4) Do **NOT** harrass other developers for any reason. More information available at: [OutBot's Code Of Conduct](https://github.com/OutMyth-Dev/OutBot?tab=coc-ov-file)
+3) Follow [OutBot's License](https://github.com/abdfjakshduwiyernm123/OutBot?tab=MIT-1-ov-file)
+4) Do **NOT** harrass other developers for any reason. More information available at: [OutBot's Code Of Conduct](https://github.com/abdfjakshduwiyernm123/OutBot?tab=coc-ov-file)
 5) Follow [Discord's Developer Policy](https://support-dev.discord.com/hc/en-us/articles/8563934450327-Discord-Developer-Policy)
 
 ---
@@ -36,9 +36,9 @@ By contributing to OutBot you agree to comply with OutBot's license, OutBot's Co
 [Discord's Community Guidelines](https://discord.com/guidelines)  
 [Discord's Developer Policy](https://support-dev.discord.com/hc/en-us/articles/8563934450327-Discord-Developer-Policy)  
 
-[OutBot's License](https://github.com/OutMyth-Dev/OutBot?tab=MIT-1-ov-file)  
-[OutBot's Code Of Conduct](https://github.com/OutMyth-Dev/OutBot?tab=coc-ov-file )  
-[OutBot's Contributing Policy](https://github.com/OutMyth-Dev/OutBot?tab=contributing-ov-file)  
+[OutBot's License](https://github.com/abdfjakshduwiyernm123/OutBot?tab=MIT-1-ov-file)  
+[OutBot's Code Of Conduct](https://github.com/abdfjakshduwiyernm123/OutBot?tab=coc-ov-file )  
+[OutBot's Contributing Policy](https://github.com/abdfjakshduwiyernm123/OutBot?tab=contributing-ov-file)  
 
 ---
 

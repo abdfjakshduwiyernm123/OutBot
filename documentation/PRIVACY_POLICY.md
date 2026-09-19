@@ -27,7 +27,7 @@ OutBot does not collect any user data. OutBot cannot log it because it has no lo
 
 # Open Source
 
-OutBot is 100% open source. Open source allows users to see the source code, distribute it, contribute, and sell it (depending on the license.) OutBot allows all of the above. Before doing any of them please read [OutBot's License](https://github.com/OutMyth-Dev/OutBot?tab=MIT-1-ov-file)  
+OutBot is 100% open source. Open source allows users to see the source code, distribute it, contribute, and sell it (depending on the license.) OutBot allows all of the above. Before doing any of them please read [OutBot's License](https://github.com/abdfjakshduwiyernm123/OutBot?tab=MIT-1-ov-file)  
 
 OutBot
 
