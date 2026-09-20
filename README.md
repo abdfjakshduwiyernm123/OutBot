@@ -6,8 +6,8 @@
 - [OutBot's Config](#outbots-config)
 - [Getting Started](#getting-started)
     - [Requirements](#requirements)
-        - [Windows](#windows)
-        - [Linux/macOS](#linuxmacos)
+        - [Windows](#installing-dependencies-on-linuxmacos)
+        - [Linux/macOS](#installing-dependencies-on-linuxmacos)
     - [Getting A Local Copy Of OutBot](#getting-a-local-copy-of-outbot)
     - [Virtual Environment](#creating-a-virtual-environment)
         - [Windows Virtual Environment](#windows-virtual-environment)
@@ -17,6 +17,9 @@
     - [Creating .env](#creating-env)
     - [Adding Your Bot To Your Apps/Servers](#adding-your-bot-to-your-appsservers)
     - [Changing Developer Id](#changing-developer-id)
+    - [Run OutBot](#run-outbot)
+        - [Run OutBot On Windows](#run-outbot-on-windows)
+        - [Run OutBot On Linux/macOS](#run-outbot-on-linuxmacos)
 - [IMPORTANT NOTICE](#important-notice)
 - [Inviting OutBot To Your Apps/Discord Servers](#inviting-outbot-to-your-appsdiscord-servers)
 - [Developer notes](#developer-notes)
@@ -79,7 +82,7 @@ Command prefix has to be set to a string. "NONE" was used to show that OutBot us
 - discord.py (Latest version)
 - git - [Git Install link](https://git-scm.com/install/) 
 
-### Windows:
+### Installing Dependencies On Windows:
 
 You have to install this to allow OutBot to work:
 ```shell
@@ -96,7 +99,7 @@ If you want to use tests:
 pip install -r requirements/tests.txt
 ```
 
-### Linux/macOS:
+### Installing Dependencies On Linux/macOS:
 
 You have to install this to allow OutBot to work:
 ```shell
@@ -167,7 +170,20 @@ Go to the [Discord Developer portal Installation Tab](https://discord.com/develo
 
 ## Changing Developer Id
 
-There is one final thing we need to do and that is to change the developer id. By default it is set to OutBot's developers. By keeping it that way, you will NOT be able to sync OutBot's command tree. Go to Discord's settings and enable developer mode. Right click on your profile and click "copy user id". Copy that user id into config/.env (the same file with your disocrd token).
+There is one final thing we need to do and that is to change the developer id. By default it is set to OutBot's developers. By keeping it that way, you will NOT be able to sync OutBot's command tree. Go to Discord's settings and enable developer mode. Right click on your profile and click "copy user id". Copy that user id into config/.env (the same file with your disocrd token).  
+
+
+## Run OutBot
+
+### Run OutBot On Windows
+```shell
+py -m bot.main
+```
+
+### Run OutBot On Linux/macOS
+```shell
+py -m bot.main
+```
 
 # IMPORTANT NOTICE
 
