@@ -5,9 +5,7 @@ from discord import CustomActivity, Status, app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
 
-from bot import bot, OutBot
 from utils import ERROR_MESSAGE
-
 
 
 load_dotenv("config/.env")
