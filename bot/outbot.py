@@ -1,17 +1,10 @@
 import os
 
 import discord
-from discord import CustomActivity, Status, app_commands
+from discord import app_commands
 from discord.ext import commands
-from dotenv import load_dotenv
 
 from utils import ERROR_MESSAGE
-
-
-load_dotenv("config/.env")
-DISCORD_TOKEN: str | None = os.getenv("DISCORD_TOKEN")
-if DISCORD_TOKEN is None:
-    raise RuntimeError("Your discord token cannot be none.")
 
 
 class OutBot(commands.Bot):
@@ -26,7 +19,6 @@ class OutBot(commands.Bot):
                 await self.load_extension(f"cogs.{cog[:-3]}")
 
         self.tree.on_error = self.on_app_command_error
-        await self.tree.sync()
 
     async def on_app_command_error(
         self,
@@ -60,27 +52,4 @@ class OutBot(commands.Bot):
 
             else:
                 await interaction.response.send_message(ERROR_MESSAGE, ephemeral=True)
-
-
-bot = OutBot(
-    activity=discord.Game(name="📖 Reading Documentation"),
-    command_prefix="NONE",
-    intents=discord.Intents.default(),
-    status=Status.idle,
-)
-
-
-try:
-    bot.run(DISCORD_TOKEN)
-
-# DO NOT CHANGE SINGLE QUOTES TO DOUBLE QUOTES
-except TypeError:
-    raise RuntimeError(
-        'Invalid bot token. Please enter your discord bot token in a file called ".env" (you have to create it yourself) inside the folder "config".',
-    )
-
-
-except discord.LoginFailure:
-    raise RuntimeError(
-        'Invalid bot token. Please enter your discord bot token in a file called ".env" (you have to create it yourself) inside the folder "config".',
-    )
+            print(error)
