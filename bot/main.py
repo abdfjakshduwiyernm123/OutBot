@@ -1,27 +1,21 @@
 import os
 
 import discord
-from discord import Status
-from dotenv import load_dotenv
 
-from bot import OutBot
+from bot import load_env_bot_token, OutBot
 
 
 if __name__ == "__main__":
-    load_dotenv("config/.env")
-    DISCORD_TOKEN: str | None = os.getenv("DISCORD_TOKEN")
-    if DISCORD_TOKEN is None:
-        raise RuntimeError("The Discord bot token was not found in config/.env.")
+    discord_token = load_env_bot_token()
 
     bot = OutBot(
         activity=discord.Game(name="📖 Reading Documentation"),
         command_prefix="NONE",
         intents=discord.Intents.default(),
-        status=Status.idle,
+        status=discord.Status.idle,
     )
 
     try:
-        bot.run(DISCORD_TOKEN)
-
+        bot.run(discord_token)
     except discord.LoginFailure:
         raise RuntimeError("The Discord bot token in config/.env is invalid.")
