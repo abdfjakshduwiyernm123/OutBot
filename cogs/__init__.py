@@ -5,4 +5,4 @@ from .information_cog import BotPingButton, InformationCommands
 from .links_cog import LinksCommands
 from .privacy_cog import PrivacyCommands
 from .rules_cog import RulesCommands
-# from .support_cog import SupportCommands
+from .support_cog import ReportButton, SupportCommands
