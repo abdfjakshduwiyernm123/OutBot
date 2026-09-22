@@ -1,4 +1,4 @@
-BOT_VERSION: str = "0.5.8"
+BOT_VERSION: str = "0.5.9"
 DATE_CREATED: str = "July 11th 2026"
 DEVELOPER: str = "mythordian"
 LOG_RETENTION: str = "None because OutBot does not log anything!"

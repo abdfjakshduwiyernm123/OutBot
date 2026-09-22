@@ -73,7 +73,7 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
         commands_synced = await self.bot.tree.sync()
 
         await interaction.followup.send(
-            f"Command tree synced With {len(commands_synced)} /commands synced!"
+            f"Command tree synced! {len(commands_synced)} slash command groups have benn synced!"
         )
 
 

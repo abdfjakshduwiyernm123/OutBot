@@ -48,7 +48,7 @@ class BotPingButton(discord.ui.View):
 class InformationCommands(commands.GroupCog, group_name="information"):
     """Information about OutBot/OutMyth."""
 
-    def __init__(self, bot):
+    def __init__(self, bot: commands.Bot) -> None:
         self.bot = bot
 
     @discord.app_commands.command(
@@ -69,7 +69,7 @@ class InformationCommands(commands.GroupCog, group_name="information"):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        await interaction.response.send_message(view=BotPingButton(bot))
+        await interaction.response.send_message(view=BotPingButton(self.bot))
 
     @discord.app_commands.command(
         name="help",

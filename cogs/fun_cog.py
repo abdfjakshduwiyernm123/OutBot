@@ -113,7 +113,7 @@ class FunCommands(commands.GroupCog, group_name="fun"):
         )
         embed_message.add_field(
             name="Amount of messages deleted:",
-            value=f"{delete_messages} messages have been deleted that were from {user}.",
+            value=f"{delete_messages} messages have been deleted that were sent by {user}.",
         )
         embed_message.set_footer(text="Uhhh, how are they still here?")
 

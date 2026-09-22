@@ -1,3 +1,9 @@
+# OutBot Bug Fix - 22 September 2026
+
+## Update 0.5.9
+
+- Fixed 'bot is not definied' in the command /ping
+
 # OutBot Bug Fix - 19 September 2026
 
 ## Update 0.5.8

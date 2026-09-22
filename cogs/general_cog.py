@@ -37,19 +37,19 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         name="dm",
         description="OutBot DMs you. This command requires your DMs to be turned on.",
     )
-    @discord.app_commands.describe(dm="What would you like OutBot to DM you?")
+    @discord.app_commands.describe(message="What would you like OutBot to DM you?")
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def dm(
         self,
         interaction: discord.Interaction,
-        dm: app_commands.Range[str, 1, 1000],
+        message: app_commands.Range[str, 1, 1000],
     ) -> None:
         """
         DM the user who invoked the command.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-            dm (str): The message the user wants to be DMed by OutBot. Maximum length: 1000 characters.
+            message (str): The message the user wants to be DMed by OutBot. Maximum length: 1000 characters.
 
         Allowed Mentions:
             None
@@ -57,12 +57,12 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        if await send_censor_word_warning(interaction, dm):
+        if await send_censor_word_warning(interaction, message):
             return
 
         try:
             await interaction.user.send(
-                f"||{dm}||", allowed_mentions=discord.AllowedMentions.none()
+                f"||{message}||", allowed_mentions=discord.AllowedMentions.none()
             )
 
             await interaction.response.send_message(
