@@ -102,7 +102,7 @@ class FunCommands(commands.GroupCog, group_name="fun"):
         if await send_censor_word_warning(interaction, reason):
             return
 
-        embed_message = discord.Embed(
+        embed_message: discord.Embed = discord.Embed(
             title=f"{user} has been banned!",
             description=f"Reason: {reason}",
             colour=discord.Colour.red(),

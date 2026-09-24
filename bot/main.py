@@ -1,19 +1,11 @@
-import os
-
-import discord
-
-from bot import load_env_bot_token, OutBot
-
+from .error_handling import on_app_command_error
+from .load_env import load_env_bot_token
+from .run_outbot import run_bot
+from utils import custom_setup
 
 if __name__ == "__main__":
-    bot = OutBot(
-        activity=discord.Game(name="📖 Reading Documentation"),
-        command_prefix="NONE",
-        intents=discord.Intents.default(),
-        status=discord.Status.idle,
-    )
-
-    try:
-        bot.run(load_env_bot_token())
-    except discord.LoginFailure:
-        raise RuntimeError("The Discord bot token in config/.env is invalid.")
+    outbot = custom_setup()
+    
+    outbot.tree.on_error = on_app_command_error
+    load_env_bot_token()
+    run_bot()

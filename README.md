@@ -142,7 +142,7 @@ Windows:
 
 ### Linux/macOS Virtual Environment
 
-Linix/macOS:
+Linux/macOS:
 ```shell
 python3 -m venv .venv
 ```

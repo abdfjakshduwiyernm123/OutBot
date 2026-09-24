@@ -103,7 +103,7 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         if await send_censor_word_warning(interaction, message):
             return
 
-        embed_message = discord.Embed(
+        embed_message: discord.Embed = discord.Embed(
             title=f"{interaction.user} has said: ",
             description=f"{message}",
             colour=discord.Colour.green(),
@@ -149,7 +149,7 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         ) or await send_censor_word_warning(interaction, question):
             return
 
-        embed_message = discord.Embed(
+        embed_message: discord.Embed = discord.Embed(
             title=title,
             description=question,
         )

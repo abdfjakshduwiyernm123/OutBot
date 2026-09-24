@@ -27,7 +27,7 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        embed_message = discord.Embed(
+        embed_message: discord.Embed = discord.Embed(
             title="🔒 Information About OutBot's Privacy\n\n",
             description=(
                 "- Logs: Only used to debug and are stored locally.\n"
@@ -56,7 +56,7 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        embed_message = discord.Embed(
+        embed_message: discord.Embed = discord.Embed(
             title="🗃️ What data does OutBot keep about you and what does it log?\n\n",
             description=(
                 "Nothing. OutBot collects/logs **NOTHING** about you."
@@ -82,10 +82,10 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        embed_message = discord.Embed(
+        embed_message: discord.Embed = discord.Embed(
             title="Information about what OutBot logs.\n\n",
             description=(
-                f"OutBot retains logs for {LOG_RETENTION}.\n"
+                f"OutBot retains logs for {LOG_RETENTION}.\n",
                 "OutBot does not log **ANYTHING**.",
             ),
             colour=discord.Colour.green(),

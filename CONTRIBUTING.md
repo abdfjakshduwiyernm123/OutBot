@@ -12,7 +12,7 @@
 
 - Use tabs instead of spaces
 - Use consistent and descriptive names for your variables, functions, parameters, classes, and files/directories
-- Use DRY when it is appropiate
+- Use DRY when it is appropriate
 - Use google style docstrings for all your functions and methods.
 - Use normal docstrings for classes and make sure they are under 100 characters.
 - Try **NOT** to use emojis extensively.

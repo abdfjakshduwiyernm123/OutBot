@@ -89,7 +89,7 @@ class InformationCommands(commands.GroupCog, group_name="information"):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        embed_message = discord.Embed(
+        embed_message: discord.Embed = discord.Embed(
             title="📋 OutBot's Command List\n\n",
             description=(
                 "# 💻 Developer Commands\n\n"
@@ -140,7 +140,7 @@ class InformationCommands(commands.GroupCog, group_name="information"):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        embed_message = discord.Embed(
+        embed_message: discord.Embed = discord.Embed(
             title="About",
             description=(
                 "# General Information\n\n"
@@ -183,7 +183,7 @@ class InformationCommands(commands.GroupCog, group_name="information"):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        embed_message = discord.Embed(
+        embed_message: discord.Embed = discord.Embed(
             title="OutBot's Planned Features!",
             description=(
                 "- Add more interactive and fun user commands.\n"
