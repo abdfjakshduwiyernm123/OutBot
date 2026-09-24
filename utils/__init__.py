@@ -17,3 +17,4 @@ from .bot_info import (
 from .error_message import ERROR_MESSAGE
 from .outbot_custom_setup import custom_setup
 from .profanity import send_censor_word_warning
+from .report_embeds import ReportEmbedMessages
