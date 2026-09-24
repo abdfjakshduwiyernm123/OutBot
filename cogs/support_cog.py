@@ -1,10 +1,25 @@
 import discord
-from discord import app_commands
+from discord import app_commands, ui
 from discord.ext import commands
 
 from utils import ReportEmbedMessages
 
-
+class ReportDropdown(ui.View):
+    @discord.ui.select(
+        placeholder="Please select one of the options.",
+        options=[
+            discord.SelectOption(label="Harassment", value="harassment", emoji="🚫"),
+            discord.SelectOption(label="OutBot Bug", value="bug", emoji="🐛"),
+            discord.SelectOption(label="Sexting", value="Sexting", emoji="🔞"),
+            discord.SelectOption(label="Other", value="other", emoji="➕"),
+        ],
+    )
+    async def report_dropdown_callback(self, interaction: discord.Interaction, select: ui.select) -> None:
+        await interaction.response.send_message(
+            "Thank you for reporting. Reporting will be set up soon. It currently does not work. Please keep all evidence.",
+            ephemeral=True,
+        )
+ 
 class ReportButton(discord.ui.View):
     """Creates numerous buttons when /report is invoked."""
 
@@ -18,7 +33,7 @@ class ReportButton(discord.ui.View):
         emoji="➡️",
     )
     async def report_proceed_button_callback(
-        self, interaction: discord.Interaction, button: discord.ui.button
+        self, interaction: discord.Interaction, button: discord.ui.Button
     ) -> None:
         """
         Proceed with report.
@@ -30,7 +45,7 @@ class ReportButton(discord.ui.View):
         Timeout:
             5 minute (300 seconds)
         """
-        await interaction.response.edit_message(embed=ReportEmbedMessages.report_embed_message_page_2(self.user))
+        await interaction.response.edit_message(view=ReportDropdown(), embed=ReportEmbedMessages.report_embed_message_page_2(self.user))
 
     @discord.ui.button(
         label="Cancel?",
@@ -54,7 +69,7 @@ class ReportButton(discord.ui.View):
             title="Cancelled", description="Your report has been cancelled."
         )
         embed_message.set_footer(text="Report cancelled")
-        await interaction.response.send_message(embed=embed_message)
+        await interaction.response.edit_message(embed=embed_message, view=None)
 
     @discord.ui.button(
         label="Help?",
@@ -76,7 +91,7 @@ class ReportButton(discord.ui.View):
         """
         embed_message = discord.Embed(title="Help", description="Some help")
         embed_message.set_footer(text="Some help")
-        await interaction.response.edit_message(embed=embed_message, ephemeral=True)
+        await interaction.response.edit_message(embed=embed_message)
 
 
 class SupportCommands(commands.GroupCog, group_name="support"):
@@ -86,7 +101,7 @@ class SupportCommands(commands.GroupCog, group_name="support"):
         name="report",
         description="Report an issue/user.",
     )
-    @discord.app_commands.describe(user="Who is the user who did this?")
+    @discord.app_commands.describe(user="Who would you like to report. To report a bug, report the bot.")
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def report(
         self,

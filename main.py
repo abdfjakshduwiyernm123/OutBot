@@ -73,13 +73,6 @@ bot = OutBot(
 try:
     bot.run(DISCORD_TOKEN)
 
-# DO NOT CHANGE SINGLE QUOTES TO DOUBLE QUOTES
-except TypeError:
-    raise RuntimeError(
-        'Invalid bot token. Please enter your discord bot token in a file called ".env" (you have to create it yourself) inside the folder "config".',
-    )
-
-
 except discord.LoginFailure:
     raise RuntimeError(
         'Invalid bot token. Please enter your discord bot token in a file called ".env" (you have to create it yourself) inside the folder "config".',
