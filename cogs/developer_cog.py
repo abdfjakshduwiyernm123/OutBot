@@ -1,4 +1,5 @@
 import os
+from typing import Final
 
 import discord
 from discord import app_commands
@@ -8,9 +9,12 @@ from dotenv import load_dotenv
 from utils import DEVELOPER
 
 load_dotenv("config/.env")
-DEVELOPER_ID: int | None = int(os.getenv("DEVELOPER_ID"))
-if DEVELOPER_ID is None:
+developer_id: int = os.getenv("DEVELOPER_ID")
+
+if developer_id is None:
     raise RuntimeError("Your developer id cannot be none.")
+
+DEVELOPER_ID: Final[int] = int(developer_id)
 
 
 class DeveloperCommands(commands.GroupCog, group_name="developer"):
@@ -59,7 +63,7 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
             1 message per user every 86400 seconds or 1 message per user every day. This only applies the command they just used.
         """
 
-        if interaction.user.id != DEVELOPER_ID:
+        if interaction.user.id != developer_id:
             await interaction.response.send_message(
                 "Hmmm, you do not look like a developer...", ephemeral=True
             )

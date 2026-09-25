@@ -1,3 +1,9 @@
+# OutBot Bug Fix - 25 September 2026
+
+## Update 0.5.10
+
+- Fixed dsicord developer id not being able to be none.
+
 # OutBot Bug Fix - 22 September 2026
 
 ## Update 0.5.9

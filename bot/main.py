@@ -5,7 +5,6 @@ from utils import custom_setup
 
 if __name__ == "__main__":
     outbot = custom_setup()
-    
     outbot.tree.on_error = on_app_command_error
     load_env_bot_token()
     run_bot()

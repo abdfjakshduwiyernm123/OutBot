@@ -10,4 +10,4 @@ def run_bot() -> None:
     try:
         outbot.run(load_env_bot_token())
     except discord.LoginFailure:
-        raise RuntimeError("The Discord bot token in config/.env is invalid.")
+        raise RuntimeError('The Discord bot token in "config/.env" is invalid.')

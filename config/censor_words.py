@@ -1,4 +1,6 @@
-CENSOR_WORDS: tuple(str) = (
+from typing import Final
+
+CENSOR_WORDS: Final[tuple[str]] = (
     "fy",
     "fuking",
     "whorehouse",

@@ -4,6 +4,7 @@ from discord.ext import commands
 
 from utils import ReportEmbedMessages
 
+
 class ReportDropdown(ui.View):
     @discord.ui.select(
         placeholder="Please select one of the options.",
@@ -14,16 +15,19 @@ class ReportDropdown(ui.View):
             discord.SelectOption(label="Other", value="other", emoji="➕"),
         ],
     )
-    async def report_dropdown_callback(self, interaction: discord.Interaction, select: ui.select) -> None:
+    async def report_dropdown_callback(
+        self, interaction: discord.Interaction, select: ui.select
+    ) -> None:
         await interaction.response.send_message(
             "Thank you for reporting. Reporting will be set up soon. It currently does not work. Please keep all evidence.",
             ephemeral=True,
         )
- 
+
+
 class ReportButton(discord.ui.View):
     """Creates numerous buttons when /report is invoked."""
 
-    def __init__(self, user:discord.Member):
+    def __init__(self, user: discord.Member):
         super().__init__(timeout=300)
         self.user = user
 
@@ -45,7 +49,10 @@ class ReportButton(discord.ui.View):
         Timeout:
             5 minute (300 seconds)
         """
-        await interaction.response.edit_message(view=ReportDropdown(), embed=ReportEmbedMessages.report_embed_message_page_2(self.user))
+        await interaction.response.edit_message(
+            view=ReportDropdown(),
+            embed=ReportEmbedMessages.report_embed_message_page_2(self.user),
+        )
 
     @discord.ui.button(
         label="Cancel?",
@@ -101,7 +108,9 @@ class SupportCommands(commands.GroupCog, group_name="support"):
         name="report",
         description="Report an issue/user.",
     )
-    @discord.app_commands.describe(user="Who would you like to report. To report a bug, report the bot.")
+    @discord.app_commands.describe(
+        user="Who would you like to report. To report a bug, report the bot."
+    )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def report(
         self,
