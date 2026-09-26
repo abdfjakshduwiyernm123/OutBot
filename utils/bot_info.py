@@ -23,9 +23,6 @@ OUTBOT_INVITE_LINK: Final[str] = (
 OUTBOT_LICENSE: Final[str] = (
     "[OutBot's License](<https://github.com/abdfjakshduwiyernm123/OutBot?tab=MIT-1-ov-file>)"
 )
-OUTMYTH_YOUTUBE_CHANNEL_LINK: Final[str] = (
-    "[OutMyth's Youtube Channel Link](<https://www.youtube.com/channel/UCGjkPP8sjN8WanIY6hhAeKw>)"
-)
 PRIVACY_POLICY: Final[str] = (
     "[Outbot's Privacy Policy](<https://github.com/abdfjakshduwiyernm123/OutBot/blob/main/PRIVACY.md>)"
 )

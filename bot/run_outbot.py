@@ -1,7 +1,7 @@
 import discord
 
 from .load_env import load_env_bot_token
-from utils import custom_setup
+from .outbot_custom_setup import custom_setup
 
 
 def run_bot() -> None:

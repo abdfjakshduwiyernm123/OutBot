@@ -9,7 +9,6 @@ from utils import (
     GITHUB_LINK,
     OUTBOT_INVITE_LINK,
     OUTBOT_LICENSE,
-    OUTMYTH_YOUTUBE_CHANNEL_LINK,
     PRIVACY_POLICY,
     SECURITY_POLICY,
     TERMS_OF_SERVICE,
@@ -17,27 +16,7 @@ from utils import (
 
 
 class LinksCommands(commands.GroupCog, group_name="link"):
-    """Useful links about OutBot/OutMyth."""
-
-    @discord.app_commands.command(
-        name="youtube",
-        description="OutMyth's YouTube channel link",
-    )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def youtube(
-        self,
-        interaction: discord.Interaction,
-    ) -> None:
-        """
-        Sends the OutMyth's YouTube channel link
-
-        Args:
-            interaction (discord.Interaction): The Discord command being invoked.
-
-        Cooldown:
-            1 message per user every 30 seconds. This only applies the command they just used.
-        """
-        await interaction.response.send_message(OUTMYTH_YOUTUBE_CHANNEL_LINK)
+    """Useful links about OutBot."""
 
     @discord.app_commands.command(
         name="discord",

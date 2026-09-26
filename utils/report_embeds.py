@@ -10,7 +10,7 @@ class ReportEmbedMessages:
         Args:
             user (discord.user): The discord user being reported
 
-        Retruns:
+        Returns:
             discord.Embed
         """
         embed_message = discord.Embed(
@@ -38,7 +38,7 @@ class ReportEmbedMessages:
         Args:
             user (discord.user): The discord user being reported
 
-        Retruns:
+        Returns:
             discord.Embed
         """
         embed_message = discord.Embed(title="User")
