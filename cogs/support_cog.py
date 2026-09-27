@@ -1,9 +1,9 @@
+import anyio
 import discord
 from discord import app_commands
 from discord.ext import commands
 
-# utils/views
-from utils import ReportButtons, ReportEmbedMessages
+from utils import ReportButtons, ReportEmbedMessages, send_censor_word_warning
 
 
 class SupportCommands(commands.GroupCog, group_name="support"):
@@ -38,8 +38,8 @@ class SupportCommands(commands.GroupCog, group_name="support"):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        # if await send_censor_word_warning(interaction):
-        #     return
+        if await send_censor_word_warning(interaction):
+            return
 
         await interaction.response.send_message(
             embed=ReportEmbedMessages.report_embed_message_page_1(user),
@@ -47,39 +47,44 @@ class SupportCommands(commands.GroupCog, group_name="support"):
             ephemeral=True,
         )
 
-    # @discord.app_commands.command(
-    #     name="feedback",
-    #     description="Provide useful feedback to OutBot.",
-    # )
-    # @discord.app_commands.describe(feedback="Give OutBot useful feedback.")
-    # @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    # async def feedback(
-    #     self,
-    #     interaction: discord.Interaction,
-    #     feedback: app_commands.Range[str, 1, 1999],
-    # ) -> None:
-    #     """
-    #     A command users can use to send feedback.
+    @discord.app_commands.command(
+        name="feedback",
+        description="Provide useful feedback to OutBot.",
+    )
+    @discord.app_commands.describe(feedback="Give OutBot useful feedback.")
+    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
+    async def feedback(
+        self,
+        interaction: discord.Interaction,
+        feedback: app_commands.Range[str, 1, 1999],
+    ) -> None:
+        """
+        A command users can use to send feedback.
 
-    #     Args:
-    #         interaction(discord.Interaction): The discord command being invoked.
-    #         feedback (str): What feedback the user passes in. Maximum length: 1999 characters.
+        Args:
+            interaction(discord.Interaction): The discord command being invoked.
+            feedback (str): What feedback the user passes in. Maximum length: 1999 characters.
 
-    #     Allowed Mentions:
-    #         N/A
+        Allowed Mentions:
+            N/A
 
-    #     Returns:
-    #         None
+        Returns:
+            None
 
-    #     Cooldown:
-    #         1 message per user every 30 seconds. This only applies the command they just used.
-    #     """
-    #     if await send_censor_word_warning(interaction, feedback):
-    #         return
+        Cooldown:
+            1 message per user every 30 seconds. This only applies the command they just used.
+        """
+        if await send_censor_word_warning(interaction, feedback):
+            return
 
-    #     await interaction.response.send_message(
-    #         "Feedback has been sent!", ephemeral=True
-    #     )
+        async with await anyio.open_file(
+            "C:/OutBot/FEEDBACK.txt", "a", encoding="utf-8"
+        ) as user_feedback:
+            user_feedback.write("feedback")
+
+        await interaction.response.send_message(
+            "Feedback has been sent!", ephemeral=True
+        )
 
 
 async def setup(bot: commands.Bot) -> None:

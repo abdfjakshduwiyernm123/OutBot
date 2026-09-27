@@ -20,6 +20,7 @@
 - You may use ai but make sure you proofread all the code ai gives you
 - If there is a tool that can be used to make your code simpler, use it
 - Before submitting your code, please run your code through ruff and codespell; **MAKE SURE** you proofread it
+- Please read and listen to comments
 
 - MAKE SURE YOU EXPLAIN WHAT YOU CHANGED, AND WHY YOU CHANGED WHAT YOU CHANGED. IF YOU FAIL TO, YOUR CHANGES WILL BE REJECTED. THIS INCLUDE DEVELOPERS.
 

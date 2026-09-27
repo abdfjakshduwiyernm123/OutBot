@@ -9,12 +9,11 @@ from dotenv import load_dotenv
 from utils import DEVELOPER
 
 load_dotenv("config/.env")
-developer_id: int = os.getenv("DEVELOPER_ID")
+developer_id: Final[int] = int(os.getenv("DEVELOPER_ID"))
 
-if developer_id is None:
-    raise RuntimeError("Your developer id cannot be none.")
-
-DEVELOPER_ID: Final[int] = int(developer_id)
+# DO NOT ADD THIS. OUTBOT WILL NOT RUN AND WILL WARN THE USER WITHOUT THIS.
+# if developer_id is None:
+#     raise RuntimeError("Your developer id cannot be none.")
 
 
 class DeveloperCommands(commands.GroupCog, group_name="developer"):
@@ -51,7 +50,7 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
         name="sync",
         description="Sync Command Tree. (Only developers can use this command)",
     )
-    @app_commands.checks.cooldown(1, 86400, key=lambda interaction: interaction.user.id)
+    @app_commands.checks.cooldown(1, 0, key=lambda interaction: interaction.user.id)
     async def sync(self, interaction: discord.Interaction) -> None:
         """
         Syncs Bot Command Tree

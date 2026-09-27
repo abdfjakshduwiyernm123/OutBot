@@ -8,3 +8,6 @@ venv/
 **/__pycache__/
 *.pyc
 .ruff_cache/
+
+# User feedback
+FEEDBACK.txt

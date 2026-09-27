@@ -34,30 +34,30 @@ OutBot is an open source, privacy respecting Discord utility bot built using **d
 
 OutBot uses **NO** privileged intents. OutBot does **NOT** use **ANY GATEWAY INTENTS**. Intents will be covered in more detail [here](#intents).
 
-OutBot's Current Version: **v0.5.9**
+OutBot's Current Version: **v0.5.12**
 
 ## Intents
 
 There are two types of intents. Privileged intents and regular intents. Think of an intent as a way of the bot to "subscribe" to specific events (information). OutBot uses no intents at all because it does not need any. This may change in the future.
 ```py
-intents=discord.Intents.none()
+intents = discord.Intents.none()
 ```
 
 Discord always has something going on. A member gets banned, a member goes offline, a member sends a message etc. That information does not go to your bot. Intents are a way to tell discord what to send your bot. For example "message content privileged intent" is used when your bot needs command prefixes. This is because your bot needs to know if a message starts with your given command prefix with your command name (there are more uses to "message content privileged intent" prefix commands are probably the most common). 
 
 A privileged intent is an intent that is more sensitive or potentially less private than regular intents. There are three privileged intents which are covered below. These need to be enabled in the Discord Developer Portal and requested by your bot in code. Non-privileged intents can be enabled by:  
 ```py
-intents = discord.Intents.default() # Enables all default non-privileged intents
+intents = discord.Intents.default()  # Enables all default non-privileged intents
 ```
 
 You can disable specific intents by:  
 ```py
-intents.guilds = False # Disables guild intents.
+intents.guilds = False  # Disables guild intents.
 ```
 
 To disable all non-privileged intents 
 ```py
-intents = discord.Intents.none() # Disables all default non-privileged intents
+intents = discord.Intents.none()  # Disables all default non-privileged intents
 ```
 
 | Name | Privileged | What Does It Do? | Enabled |
@@ -134,7 +134,7 @@ Command prefix has to be set to a string. "NONE" was used to show that OutBot us
 
 You have to install this to allow OutBot to work:
 ```shell
-pip install -r requirements/base.txt
+pip install -r requirements/core.txt
 ```
 
 If you want to use ruff and cloc:
@@ -151,7 +151,7 @@ pip install -r requirements/tests.txt
 
 You have to install this to allow OutBot to work:
 ```shell
-pip3 install -r requirements/base.txt
+pip3 install -r requirements/core.txt
 ```
 
 If you want to use ruff and cloc use:

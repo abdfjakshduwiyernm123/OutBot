@@ -1,6 +1,6 @@
 from typing import Final
 
-BOT_VERSION: Final[str] = "0.5.9"
+BOT_VERSION: Final[str] = "0.5.12"
 DATE_CREATED: Final[str] = "July 11th 2026"
 DEVELOPER: Final[str] = "mythordian"
 LOG_RETENTION: Final[str] = "None because OutBot does not log anything!"
