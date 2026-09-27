@@ -9,7 +9,7 @@
 
 # Logs
 
-Logs do not exist. OutBot does **NOT LOG ANYTHING**. OutBot does not plan to re introduce logs.
+OutBot does **NOT LOG ANYTHING** because there is **NO** log system set up. OutBot does not plan to re-introduce logs.
 
 ---
 
@@ -21,18 +21,16 @@ OutBot is self hosted. OutBot will never be hosted elsewhere. Self hosting allow
 
 # User Data Collection
 
-OutBot does not collect any user data. OutBot cannot log it because it has no logs. OutBot uses no privillaged intents and does not plan to use any. OutBot is trying to move a from the /report and /feedback system it currently has. It is currently underdevelopment and should be released in a couple of days.
+OutBot does not collect any user data. OutBot cannot log user data because it has no logs. OutBot uses no gateway intents. OutBot stores all feedback in a .md file. Feedback is deleted as soon as it is delt with. OUTBOT DOES NOT STORE REPORTS.  
 
 ---
 
 # Open Source
 
-OutBot is 100% open source. Open source allows users to see the source code, distribute it, contribute, and sell it (depending on the license.) OutBot allows all of the above. Before doing any of them please read [OutBot's License](https://github.com/abdfjakshduwiyernm123/OutBot?tab=MIT-1-ov-file)  
-
-OutBot
+OutBot is 100% open source. Open source allows users to see the source code, distribute it, contribute, and sell it. OutBot allows all of the above. Before doing any of them please read [OutBot's License](https://github.com/abdfjakshduwiyernm123/OutBot?tab=MIT-1-ov-file) More about what open source is [here](https://opensource.org/osd).
 
 ---
 
 # Developer Notes 
 
-If you have any privacy concerns, please open a GitHub issue, create a ticket on OutMyth's discord server, or use /report.
+If you have any privacy concerns, please open a GitHub issue, or create a ticket on [OutMyth's discord server](https://discord.gg/Sc5vAvTJtc). **DO NOT USER /REPORT OR /FEEDBACK**

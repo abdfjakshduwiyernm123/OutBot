@@ -1,18 +1,20 @@
 # Table Of Contents
 
 - [About](#about)
+    - [Intents](#intents)
+    - [What Is Open Source?](#what-is-open-source)
 - [Useful Link](#useful-links)
 - [Ephemeral Messages](#what-are-ephemeral-messages)
 - [OutBot's Config](#outbots-config)
 - [Getting Started](#getting-started)
     - [Requirements](#requirements)
-        - [Windows](#installing-dependencies-on-linuxmacos)
+        - [Windows](#installing-dependencies-on-windows)
         - [Linux/macOS](#installing-dependencies-on-linuxmacos)
     - [Getting A Local Copy Of OutBot](#getting-a-local-copy-of-outbot)
     - [Virtual Environment](#creating-a-virtual-environment)
         - [Windows Virtual Environment](#windows-virtual-environment)
         - [Linux/macOS Virtual Environment](#linuxmacos-virtual-environment)
-    - [Discord Bot Token](discord-bot-token)
+    - [Discord Bot Token](#discord-bot-token)
     - [Discord Developer Portal Setup](#discord-developer-portal-setup)
     - [Creating .env](#creating-env)
     - [Adding Your Bot To Your Apps/Servers](#adding-your-bot-to-your-appsservers)
@@ -28,13 +30,59 @@
 
 # About
 
-OutBot is an open source, privacy respecting Discord utility bot built using **discord.py**. **OutBot is 100% open source**. Most popular Discord bots **NOT** open source. Open Source helps users understand what they are using while allowing them to do whatever they want to do with the project (depending on the license). It can also help make your project become a lot better. Take the kernel for instance, if it were closed source, it would be nowhere near as good as it is now.
+OutBot is an open source, privacy respecting Discord utility bot built using **discord.py**. **OutBot is 100% open source**. Most popular Discord bots are **NOT** open source. Open source is covered in more detail [here](https://opensource.org/osd).
 
-OutBot uses **NO** privileged intents. Most popular discord bots use them. Member intents allows the bot to see members joining/leaving the server. Presence intent allows the bot to see member status (idle, offline, online, do not disturb et cetera). Message content intent allows the bot to see user messages. This is intent usually used for prefix commands. However OutBot does use discor's default intents.  
-
-For more information, please read: [OutBot's Privacy Policy](https://github.com/abdfjakshduwiyernm123/OutBot/blob/main/PRIVACY.md)
+OutBot uses **NO** privileged intents. OutBot does **NOT** use **ANY GATEWAY INTENTS**. Intents will be covered in more detail [here](#intents).
 
 OutBot's Current Version: **v0.5.9**
+
+## Intents
+
+There are two types of intents. Privileged intents and regular intents. Think of an intent as a way of the bot to "subscribe" to specific events (information). OutBot uses no intents at all because it does not need any. This may change in the future.
+```py
+intents=discord.Intents.none()
+```
+
+Discord always has something going on. A member gets banned, a member goes offline, a member sends a message etc. That information does not go to your bot. Intents are a way to tell discord what to send your bot. For example "message content privileged intent" is used when your bot needs command prefixes. This is because your bot needs to know if a message starts with your given command prefix with your command name (there are more uses to "message content privileged intent" prefix commands are probably the most common). 
+
+A privileged intent is an intent that is more sensitive or potentially less private than regular intents. There are three privileged intents which are covered below. These need to be enabled in the Discord Developer Portal and requested by your bot in code. Non-privileged intents can be enabled by:  
+```py
+intents = discord.Intents.default() # Enables all default non-privileged intents
+```
+
+You can disable specific intents by:  
+```py
+intents.guilds = False # Disables guild intents.
+```
+
+To disable all non-privileged intents 
+```py
+intents = discord.Intents.none() # Disables all default non-privileged intents
+```
+
+| Name | Privileged | What Does It Do? | Enabled |
+| --- | --- | --- | --- |
+| Member Intent | Yes | Receives member join, leave, and update information | No |
+| Message Content Intent | Yes | Allows the bot to read message content | No |
+| Presence Intent | Yes | Receives member activity and status updates | No |
+| Guilds Intent | No | Receives guild/server-related events | No |
+| Ban Intent | No | Receives information when users are banned or unbanned | No |
+| Emoji Intent | No | Receives emoji/sticker creation, update, and deletion events | No |
+| Integrations Intent | No | Receives integration-related events | No |
+| Webhook Intent | No | Receives webhook creation, update, and deletion events | No |
+| Invite Intent | No | Receives invite creation and deletion events | No |
+| Voice States Intent | No | Receives voice state updates, such as users joining or leaving voice channels | No |
+| Messages Intent | No | Receives message creation, update, and deletion events in guilds | No |
+| Reactions Intent | No | Receives reaction add and removal events on messages | No |
+| Typing Intent | No | Receives typing events in guild channels | No |
+| DM Messages Intent | No | Receives message events in direct messages | No |
+| DM Reactions Intent | No | Receives reaction events in direct messages | No |
+| DM Typing Intent | No | Receives typing events in direct messages | No |
+
+
+## What Is Open Source? 
+
+Open source is when a project's source code is available. Users can modify, distribute, sell, and contribute to the project. Some examples you may have heard of are: the Linux kernel, python, gcc, typescript, and vscode. Open source allows more user transparency than closed source does. It can also be more convenient for users. Lets say you have a problem. For a closed source project, you would have to open support tickets and sometimes not get the help you wanted. With an open source project, you can solve the problem yourself. The link [here](https://opensource.org/osd) discusses open source in much more detail.
 
 ---
 
@@ -68,7 +116,7 @@ OutBot's Current Version: **v0.5.9**
 
 # OutBot's Config
 
-OutBot does **NOT** use prefix  commands. Therefore, command_prefix="NONE". OutBot uses **NO** privileged intents. Therefore, intents=discord.Intents.default()
+OutBot does **NOT** use prefix  commands. Therefore, command_prefix="NONE". OutBot uses **NO** gateway intents. Therefore, intents=discord.Intents.none()
 
 Command prefix has to be set to a string. "NONE" was used to show that OutBot uses no prefix commands. You have freedom to change that. Because OutBot uses no privillaged intents, "(current time) WARNING  discord.ext.commands.bot Privileged message content intent is missing, commands may not work as expected." will be displayed in the terminal. If you want prefix commands enable the "Message Content" privillaged intent. You can ignore it if you don't plan on using prefix commands.
 
@@ -79,8 +127,8 @@ Command prefix has to be set to a string. "NONE" was used to show that OutBot us
 ## Requirements
 
 - [Python's Latest Version](https://www.python.org/downloads/)
-- discord.py (Latest version)
-- git - [Git Install link](https://git-scm.com/install/) 
+- discord.py (Newest version) You can check discord.py latest version [here](https://pypi.org/project/discord.py/)
+- [git](https://git-scm.com/install/) 
 
 ### Installing Dependencies On Windows:
 

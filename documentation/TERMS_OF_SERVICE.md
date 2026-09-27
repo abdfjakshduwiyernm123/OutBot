@@ -22,10 +22,11 @@ By contributing to OutBot you agree to comply with OutBot's license, OutBot's Co
 3) Do **NOT** use OutBot for illeagal activities  
 
 ## Developer Rules  
-1) Do not add intentionally add security vulnerabilities 
+1) Do not add intentionally add security vulnerabilities or mallicious code
 2) Follow [OutBot's License](https://github.com/abdfjakshduwiyernm123/OutBot?tab=MIT-1-ov-file)
 3) Do **NOT** harass other developers for any reason. More information available at: [OutBot's Code Of Conduct](https://github.com/abdfjakshduwiyernm123/OutBot?tab=coc-ov-file)
 4) Follow [Discord's Developer Policy](https://support-dev.discord.com/hc/en-us/articles/8563934450327-Discord-Developer-Policy)
+5) Follow user rules because they **STILL** apply to you.
 
 ---
 

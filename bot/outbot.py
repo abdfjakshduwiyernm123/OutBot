@@ -6,7 +6,7 @@ from .error_handling import on_app_command_error
 
 
 class OutBot(commands.Bot):
-    """OutBot's custom setup class."""
+    """Loads cogs."""
 
     async def setup_hook(self) -> None:
         """Loads all cogs and syncs all commands to the command tree"""

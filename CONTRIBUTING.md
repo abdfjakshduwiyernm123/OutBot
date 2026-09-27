@@ -12,16 +12,14 @@
 
 - Use tabs instead of spaces
 - Use consistent and descriptive names for your variables, functions, parameters, classes, and files/directories
-- Use DRY when it is appropriate
-- Use google style docstrings for all your functions and methods.
-- Use normal docstrings for classes and make sure they are under 100 characters.
+- Use DRY where appropriate
+- Use google style docstrings for all your functions and methods. Use normal docstrings for classes and make sure they are under 100 characters.
 - Try **NOT** to use emojis extensively.
 - Try to write **SIMPLE** code, rather than **CLEVER** code
-- Avoid nesting as much as possible
-- Performance is more important than readable code
+- Avoid nesting where possible
 - You may use ai but make sure you proofread all the code ai gives you
 - If there is a tool that can be used to make your code simpler, use it
-- Before submitting your code, please run your code through ruff and proofread it
+- Before submitting your code, please run your code through ruff and codespell; **MAKE SURE** you proofread it
 
 - MAKE SURE YOU EXPLAIN WHAT YOU CHANGED, AND WHY YOU CHANGED WHAT YOU CHANGED. IF YOU FAIL TO, YOUR CHANGES WILL BE REJECTED. THIS INCLUDE DEVELOPERS.
 
