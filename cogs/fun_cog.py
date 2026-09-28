@@ -49,11 +49,11 @@ class FunCommands(commands.GroupCog, group_name="fun"):
         delete_messages: app_commands.Range[int, 1, 1000],
     ) -> None:
         """
-        Fake bans the user.
+        Moderation Bans a user.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
-            user (discord.Member): Who does the the person using the command want to ban?
+            user (discord.Member): What user a moderator wants to ban.
             reason (str): What is the reason for banning them? Maximum length: 200 characters.
             duration (int): How long do they want the user to stay banned. Maximum length: Any number 1 - 1000.
             delete_messages (int): How many of their messages do they want to delete? Maximum length: Any number 1 - 1000.

@@ -32,9 +32,6 @@ class SupportCommands(commands.GroupCog, group_name="support"):
         Allowed Mentions:
             N/A
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -56,7 +53,7 @@ class SupportCommands(commands.GroupCog, group_name="support"):
     async def feedback(
         self,
         interaction: discord.Interaction,
-        feedback: app_commands.Range[str, 1, 1999],
+        feedback: app_commands.Range[str, 50, 1500],
     ) -> None:
         """
         A command users can use to send feedback.
@@ -68,9 +65,6 @@ class SupportCommands(commands.GroupCog, group_name="support"):
         Allowed Mentions:
             N/A
 
-        Returns:
-            None
-
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
@@ -80,11 +74,11 @@ class SupportCommands(commands.GroupCog, group_name="support"):
         async with await anyio.open_file(
             "C:/OutBot/FEEDBACK.txt", "a", encoding="utf-8"
         ) as user_feedback:
-            user_feedback.write("feedback")
+            await user_feedback.write(f"New user feedback:\n\n{feedback}\n\n---\n\n")
 
-        await interaction.response.send_message(
-            "Feedback has been sent!", ephemeral=True
-        )
+        await interaction.response.defer(ephemeral=True)
+
+        await interaction.followup.send("Feedback has been sent!")
 
 
 async def setup(bot: commands.Bot) -> None:
