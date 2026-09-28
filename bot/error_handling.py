@@ -31,3 +31,4 @@ async def on_app_command_error(
 
         else:
             await interaction.response.send_message(ERROR_MESSAGE, ephemeral=True)
+            print(error)

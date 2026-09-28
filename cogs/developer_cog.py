@@ -50,7 +50,7 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
         name="sync",
         description="Sync Command Tree. (Only developers can use this command)",
     )
-    @app_commands.checks.cooldown(1, 86400, key=lambda interaction: interaction.user.id)
+    @app_commands.checks.cooldown(1, 10, key=lambda interaction: interaction.user.id)
     async def sync(self, interaction: discord.Interaction) -> None:
         """
         Syncs Bot Command Tree
@@ -75,8 +75,8 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
         commands_synced = await self.bot.tree.sync()
 
         embed_message: discord.Embed = discord.Embed(
-            title="OutBot's Command Tree Synced",
-            description=f"{len(commands_synced)} slash command groups synced!",
+            title="Synced",
+            description=f"{len(commands_synced)} slash command groups have been synced.",
         )
 
         await interaction.followup.send(embed=embed_message)

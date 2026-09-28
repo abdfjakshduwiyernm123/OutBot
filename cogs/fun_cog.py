@@ -32,7 +32,7 @@ class FunCommands(commands.GroupCog, group_name="fun"):
 
         await interaction.response.send_message(view=FreeNitroButton())
 
-    @discord.app_commands.command(name="fakeban", description="Fake bans a user.")
+    @discord.app_commands.command(name="fakeban", description="Pretend to ban a user.")
     @discord.app_commands.describe(
         user="Who do you want to ban?",
         reason="Why would you like to ban them?",

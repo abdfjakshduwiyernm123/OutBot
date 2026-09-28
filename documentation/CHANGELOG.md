@@ -2,7 +2,7 @@
 
 ## Update 0.5.12
 
-- Fixed /sync not working (for devlopers)
+- Fixed /sync not working (for developers)
 
 # OutBot Bug Fix - 25 September 2026
 
