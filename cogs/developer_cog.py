@@ -50,7 +50,7 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
         name="sync",
         description="Sync Command Tree. (Only developers can use this command)",
     )
-    @app_commands.checks.cooldown(1, 10, key=lambda interaction: interaction.user.id)
+    @app_commands.checks.cooldown(1, 86400, key=lambda interaction: interaction.user.id)
     async def sync(self, interaction: discord.Interaction) -> None:
         """
         Syncs Bot Command Tree

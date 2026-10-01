@@ -8,7 +8,7 @@ def custom_setup() -> OutBot:
     outbot: OutBot = OutBot(
         activity=discord.Game(name="📖 Reading Documentation"),
         command_prefix="NONE",
-        intents=discord.Intents.none(),
+        intents=discord.Intents.default(),
         status=discord.Status.idle,
     )
     return outbot

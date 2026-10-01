@@ -1,6 +1,6 @@
 import discord
 
-from utils import ERROR_MESSAGE
+from utils import response_check, GITHUB_LINK
 
 
 async def on_app_command_error(
@@ -15,20 +15,38 @@ async def on_app_command_error(
     """
 
     if isinstance(error, discord.app_commands.CommandOnCooldown):
-        RATE_LIMIT_MESSAGE = (
-            f"Rate limited! Try again in {error.retry_after:.2f} seconds."
+        await response_check(
+            interaction,
+            f"Rate limited! Try again in {error.retry_after:.2f} seconds.",
+            ephemeral=True,
         )
-        if interaction.response.is_done():
-            await interaction.followup.send(RATE_LIMIT_MESSAGE, ephemeral=True)
-            return
-        else:
-            await interaction.response.send_message(RATE_LIMIT_MESSAGE, ephemeral=True)
-            return
+
+    elif isinstance(error, discord.app_commands.MissingPermissions):
+        await response_check(
+            interaction,
+            "You do not have the permissions to use that command.",
+            ephemeral=True,
+        )
+
+    elif isinstance(error, discord.app_commands.BotMissingPermissions):
+        permissions = ", ".join(error.missing_permissions)
+        await response_check(
+            interaction,
+            f"I'm missing these permissions: `{permissions}`",
+            ephemeral=True,
+        )
+
+    elif isinstance(error, app_commands.CommandInvokeError):
+        await response_check(
+            interaction,
+            f"Something went wrong while executing that command. Please open a ticket or a GitHub issue ({GITHUB_LINK})",
+            ephemeral=True,
+        )
 
     else:
-        if interaction.response.is_done():
-            await interaction.followup.send(ERROR_MESSAGE, ephemeral=True)
-
-        else:
-            await interaction.response.send_message(ERROR_MESSAGE, ephemeral=True)
-            print(error)
+        await response_check(
+            interaction,
+            f"# Something went wrong :(\nAn unexpected error occurred, please open a ticket or a GitHub issue ({GITHUB_LINK})",
+            ephemeral=True,
+        )
+        print(error)
