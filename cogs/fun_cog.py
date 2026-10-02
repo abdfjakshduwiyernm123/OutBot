@@ -1,17 +1,17 @@
 import discord
 from discord import app_commands
-from discord.ext import commands
 
+from bot import OutBot
 from utils import FreeNitroButton, send_censor_word_warning
 
 
-class FunCommands(commands.GroupCog, group_name="fun"):
+class FunCommands(app_commands.Group):
     """Commands for user's to have fun."""
 
-    def __init__(self, bot) -> None:
-        self.bot = bot
+    def __init__(self) -> None:
+        super().__init__(name="fun")
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="freenitro",
         description="Trust me bro...",
     )
@@ -32,8 +32,8 @@ class FunCommands(commands.GroupCog, group_name="fun"):
 
         await interaction.response.send_message(view=FreeNitroButton())
 
-    @discord.app_commands.command(name="fakeban", description="Pretend to ban a user.")
-    @discord.app_commands.describe(
+    @app_commands.command(name="fakeban", description="Pretend to ban a user.")
+    @app_commands.describe(
         user="Who do you want to ban?",
         reason="Why would you like to ban them?",
         duration="How long will you like to ban this user for (in years)?",
@@ -84,9 +84,8 @@ class FunCommands(commands.GroupCog, group_name="fun"):
 
         await interaction.response.send_message(
             embed=embed_message,
-            allowed_mentions=discord.AllowedMentions.none(),
         )
 
 
-async def setup(bot: commands.Bot) -> None:
-    await bot.add_cog(FunCommands(bot))
+def setup(bot: OutBot) -> FunCommands:
+    return FunCommands()

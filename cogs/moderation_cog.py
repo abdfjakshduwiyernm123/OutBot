@@ -1,12 +1,17 @@
 import discord
 from discord import app_commands
-from discord.ext import commands
+
+from bot import OutBot
+from utils import send_censor_word_warning
 
 
-class ModerationCommands(commands.GroupCog, group_name="moderation"):
+class ModerationCommands(app_commands.Group):
     """OutBot's moderation commands"""
 
-    @discord.app_commands.command(name="ban", description="Moderation ban a member")
+    def __init__(self):
+        super().__init__(name="moderation")
+
+    @app_commands.command(name="ban", description="Moderation ban a member")
     @app_commands.guild_only()
     @discord.app_commands.describe(
         user="The member you would like to ban",
@@ -31,13 +36,26 @@ class ModerationCommands(commands.GroupCog, group_name="moderation"):
             1 message per user every 30 seconds or 1 message per user every day. This only applies the command they just used.
         """
 
+        if await send_censor_word_warning(interaction, reason):
+            return
+
+        guild: discord.Guild | None = interaction.guild
+
+        if guild is None:
+            return
+
+        owner: discord.Member | None = guild.owner
+
+        if owner is None:
+            return
+
         if user == interaction.user:
             await interaction.response.send_message(
                 "You cannot ban yourself.", ephemeral=True
             )
             return
 
-        if user == interaction.guild.owner:
+        if user == guild.owner:
             await interaction.response.send_message(
                 "You cannot ban the server owner.",
                 ephemeral=True,
@@ -45,11 +63,11 @@ class ModerationCommands(commands.GroupCog, group_name="moderation"):
             return
 
         await interaction.response.defer(ephemeral=True)
-        await interaction.guild.ban(user, reason=reason)
+        await guild.ban(user, reason=reason)
         await interaction.followup.send(
             f"User: {user} was banned by {interaction.user} because of {reason}."
         )
 
 
-async def setup(bot: commands.Bot) -> None:
-    await bot.add_cog(ModerationCommands(bot))
+def setup(bot: OutBot) -> ModerationCommands:
+    return ModerationCommands()

@@ -25,7 +25,6 @@ __all__: list[str] = [
     "DATE_CREATED",
     "DEVELOPER",
     "DISCORD_SERVER_INVITE_LINK",
-    "ERROR_MESSAGE",
     "GITHUB_LINK",
     "LOG_RETENTION",
     "OUTBOT_INVITE_LINK",

@@ -1,13 +1,16 @@
 import anyio
 import discord
 from discord import app_commands
-from discord.ext import commands
 
+from bot import OutBot
 from utils import ReportButtons, ReportEmbedMessages, send_censor_word_warning
 
 
-class SupportCommands(commands.GroupCog, group_name="support"):
+class SupportCommands(app_commands.Group):
     """Commands related to user support."""
+
+    def __init__(self):
+        super().__init__(name="support")
 
     @discord.app_commands.command(
         name="report",
@@ -35,8 +38,6 @@ class SupportCommands(commands.GroupCog, group_name="support"):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        if await send_censor_word_warning(interaction):
-            return
 
         await interaction.response.send_message(
             embed=ReportEmbedMessages.report_embed_message_page_1(user),
@@ -81,5 +82,5 @@ class SupportCommands(commands.GroupCog, group_name="support"):
         await interaction.followup.send("Feedback has been sent!")
 
 
-async def setup(bot: commands.Bot) -> None:
-    await bot.add_cog(SupportCommands(bot))
+def setup(bot: OutBot) -> SupportCommands:
+    return SupportCommands()

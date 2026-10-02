@@ -1,7 +1,7 @@
 import discord
 from discord import app_commands
-from discord.ext import commands
 
+from bot import OutBot
 from utils import (
     CODE_OF_CONDUCT,
     CONTRIBUTING_POLICY,
@@ -15,10 +15,13 @@ from utils import (
 )
 
 
-class LinksCommands(commands.GroupCog, group_name="link"):
+class LinksCommands(app_commands.Group):
     """Useful links about OutBot."""
 
-    @discord.app_commands.command(
+    def __init__(self) -> None:
+        super().__init__(name="links")
+
+    @app_commands.command(
         name="discord",
         description="OutMyth's Discord server invite link.",
     )
@@ -37,7 +40,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         """
         await interaction.response.send_message(DISCORD_SERVER_INVITE_LINK)
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="invite",
         description="OutBot's invite link.",
     )
@@ -57,7 +60,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         """
         await interaction.response.send_message(OUTBOT_INVITE_LINK)
 
-    @discord.app_commands.command(name="github", description="OutBot's GitHub")
+    @app_commands.command(name="github", description="OutBot's GitHub")
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def github(
         self,
@@ -74,7 +77,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         """
         await interaction.response.send_message(GITHUB_LINK)
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="code_of_conduct",
         description="OutBot's Code Of Conduct.",
     )
@@ -91,7 +94,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         """
         await interaction.response.send_message(CODE_OF_CONDUCT)
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="contributing_policy",
         description="OutBot's Contributing Policy",
     )
@@ -108,7 +111,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         """
         await interaction.response.send_message(CONTRIBUTING_POLICY)
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="licnese",
         description="OutBot's License.",
     )
@@ -125,7 +128,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         """
         await interaction.response.send_message(OUTBOT_LICENSE)
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="privacy_policy",
         description="OutBot's Privacy Policy.",
     )
@@ -142,7 +145,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         """
         await interaction.response.send_message(PRIVACY_POLICY)
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="tos",
         description="OutBot's Terms Of Service.",
     )
@@ -159,7 +162,7 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         """
         await interaction.response.send_message(TERMS_OF_SERVICE)
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="security_policy",
         description="OutBot's Security Policy.",
     )
@@ -177,5 +180,5 @@ class LinksCommands(commands.GroupCog, group_name="link"):
         await interaction.response.send_message(SECURITY_POLICY)
 
 
-async def setup(bot: commands.Bot) -> None:
-    await bot.add_cog(LinksCommands(bot))
+def setup(bot: OutBot) -> LinksCommands:
+    return LinksCommands()

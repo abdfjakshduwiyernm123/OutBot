@@ -1,28 +1,30 @@
 import os
-from typing import Final
 
 import discord
 from discord import app_commands
-from discord.ext import commands
 from dotenv import load_dotenv
 
+from bot import OutBot
 from utils import DEVELOPER
 
 load_dotenv("config/.env")
-developer_id: Final[int] = int(os.getenv("DEVELOPER_ID"))
+developer_id_str: str | None = os.getenv("DEVELOPER_ID")
 
-# DO NOT ADD THIS. OUTBOT WILL NOT RUN AND ALREADY WARNS THE USER WITHOUT THIS.
-# if developer_id is None:
-#     raise RuntimeError("Your developer id cannot be none.")
+if developer_id_str != None:
+    developer_id_int = int(developer_id_str)
+
+else:
+    raise RuntimeError("Your developer id cannot be none.")
 
 
-class DeveloperCommands(commands.GroupCog, group_name="developer"):
+class DeveloperCommands(app_commands.Group):
     """Information about OutBot's developers."""
 
-    def __init__(self, bot):
-        self.bot = bot
+    def __init__(self, bot: OutBot) -> None:
+        super().__init__(name="developer")
+        self.bot: OutBot = bot
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="devs", description="What developers contributed to OutBot?"
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
@@ -46,7 +48,7 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
         )
         await interaction.response.send_message(embed=embed_message)
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="sync",
         description="Sync Command Tree. (Only developers can use this command)",
     )
@@ -62,7 +64,7 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
             1 message per user every 86400 seconds or 1 message per user every day. This only applies the command they just used.
         """
 
-        if interaction.user.id != developer_id:
+        if interaction.user.id != developer_id_int:
             await interaction.response.send_message(
                 "Hmmm, you do not look like a developer...", ephemeral=True
             )
@@ -82,5 +84,5 @@ class DeveloperCommands(commands.GroupCog, group_name="developer"):
         await interaction.followup.send(embed=embed_message)
 
 
-async def setup(bot: commands.Bot) -> None:
-    await bot.add_cog(DeveloperCommands(bot))
+def setup(bot: OutBot) -> DeveloperCommands:
+    return DeveloperCommands(bot)

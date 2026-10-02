@@ -13,7 +13,7 @@ class ReportDropdown(ui.View):
         ],
     )
     async def report_dropdown_callback(
-        self, interaction: discord.Interaction, select: ui.select
+        self, interaction: discord.Interaction, select: discord.ui.Select
     ) -> None:
         await interaction.response.send_message(
             "Thank you for reporting. Reporting will be set up soon. It currently does not work. Please keep all evidence.",

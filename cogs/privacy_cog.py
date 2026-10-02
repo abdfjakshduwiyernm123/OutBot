@@ -1,7 +1,7 @@
 import discord
 from discord import app_commands
-from discord.ext import commands
 
+from bot import OutBot
 from utils import (
     GITHUB_LINK,
     LOG_RETENTION,
@@ -9,10 +9,13 @@ from utils import (
 )
 
 
-class PrivacyCommands(commands.GroupCog, group_name="privacy"):
+class PrivacyCommands(app_commands.Group):
     """Information about privacy (OutBot)."""
 
-    @discord.app_commands.command(
+    def __init__(self):
+        super().__init__(name="privacy")
+
+    @app_commands.command(
         name="privacy",
         description="Privacy related information about OutBot.",
     )
@@ -41,7 +44,7 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
 
         await interaction.response.send_message(embed=embed_message)
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="data",
         description="Information on what data OutBot retains.",
     )
@@ -67,7 +70,7 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
 
         await interaction.response.send_message(embed=embed_message)
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="logs",
         description="Information about OutBot's logs.",
     )
@@ -94,5 +97,5 @@ class PrivacyCommands(commands.GroupCog, group_name="privacy"):
         await interaction.response.send_message(embed=embed_message)
 
 
-async def setup(bot: commands.Bot) -> None:
-    await bot.add_cog(PrivacyCommands(bot))
+def setup(bot: OutBot) -> PrivacyCommands:
+    return PrivacyCommands()

@@ -1,19 +1,30 @@
-import os
+import importlib
+from pathlib import Path
 
-from discord.ext import commands
+import discord
+from discord import app_commands
 
 from .error_handling import on_app_command_error
 
 
-class OutBot(commands.Bot):
+class OutBot(discord.Client):
     """Loads cogs."""
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.tree = app_commands.CommandTree(self)
+        self.tree.on_error = on_app_command_error
 
     async def setup_hook(self) -> None:
         """Loads all cogs and syncs all commands to the command tree"""
 
-        find_cogs = os.listdir("cogs")
-        for cog in find_cogs:
-            if cog.endswith("cog.py"):
-                await self.load_extension(f"cogs.{cog[:-3]}")
+        cog_path = Path("cogs")
 
-        self.tree.on_error = on_app_command_error
+        for cog in cog_path.glob("*cog.py"):
+            module_name = cog.stem
+
+            module = importlib.import_module(f"cogs.{module_name}")
+
+            if hasattr(module, "setup"):
+                command_group = module.setup(self)
+                self.tree.add_command(command_group)

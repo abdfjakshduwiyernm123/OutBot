@@ -2,7 +2,7 @@ import discord
 
 
 async def response_check(
-    interaction: discord.Interaction, *, error_message: str, ephemeral: bool = True
+    interaction: discord.Interaction, error_message: str, *, ephemeral: bool = True
 ) -> None:
     """
     Util for checking if an interaction has been responded to
