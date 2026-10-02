@@ -13,9 +13,9 @@ from .bot_info import (
     SECURITY_POLICY,
     TERMS_OF_SERVICE,
 )
-from .error_message import ERROR_MESSAGE
 from .profanity import send_censor_word_warning
 from .report_embeds import ReportEmbedMessages
+from .response_check_error_handling import response_check
 from .views import BotPingButton, FreeNitroButton, ReportButtons, ReportDropdown
 
 __all__: list[str] = [
@@ -25,7 +25,6 @@ __all__: list[str] = [
     "DATE_CREATED",
     "DEVELOPER",
     "DISCORD_SERVER_INVITE_LINK",
-    "ERROR_MESSAGE",
     "GITHUB_LINK",
     "LOG_RETENTION",
     "OUTBOT_INVITE_LINK",
@@ -38,5 +37,6 @@ __all__: list[str] = [
     "ReportButtons",
     "ReportDropdown",
     "ReportEmbedMessages",
+    "response_check",
     "send_censor_word_warning",
 ]

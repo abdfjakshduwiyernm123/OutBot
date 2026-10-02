@@ -1,7 +1,7 @@
 import discord
 from discord import app_commands
-from discord.ext import commands
 
+from bot import OutBot
 from utils import (
     BOT_VERSION,
     CODE_OF_CONDUCT,
@@ -18,13 +18,14 @@ from utils import (
 )
 
 
-class InformationCommands(commands.GroupCog, group_name="information"):
+class InformationCommands(app_commands.Group):
     """Information about OutBot/OutMyth."""
 
-    def __init__(self, bot: commands.Bot) -> None:
-        self.bot = bot
+    def __init__(self, bot: OutBot) -> None:
+        super().__init__(name="info")
+        self.bot: OutBot = bot
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="ping",
         description="Click a magical button that displays Outbot's ping.",
     )
@@ -44,7 +45,7 @@ class InformationCommands(commands.GroupCog, group_name="information"):
         """
         await interaction.response.send_message(view=BotPingButton(self.bot))
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="help",
         description="OutBot's Command Guide",
     )
@@ -98,7 +99,7 @@ class InformationCommands(commands.GroupCog, group_name="information"):
 
         await interaction.response.send_message(embed=embed_message)
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="about",
         description="Useful Information About OutBot!",
     )
@@ -142,7 +143,7 @@ class InformationCommands(commands.GroupCog, group_name="information"):
 
         await interaction.response.send_message(embed=embed_message)
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="roadmap",
         description="Planned Features For OutBot!",
     )
@@ -172,5 +173,5 @@ class InformationCommands(commands.GroupCog, group_name="information"):
         await interaction.response.send_message(embed=embed_message)
 
 
-async def setup(bot: commands.Bot) -> None:
-    await bot.add_cog(InformationCommands(bot))
+def setup(bot: OutBot) -> InformationCommands:
+    return InformationCommands(bot)

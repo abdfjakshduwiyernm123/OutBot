@@ -1,12 +1,15 @@
 import discord
 from discord import app_commands
-from discord.ext import commands
 
+from bot import OutBot
 from utils import TERMS_OF_SERVICE
 
 
-class RulesCommands(commands.GroupCog, group_name="rules"):
+class RulesCommands(app_commands.Group):
     """Commands related to rules. Users can use to commands to find out rules they did not know about"""
+
+    def __init__(self):
+        super().__init__(name="rules")
 
     @discord.app_commands.command(
         name="outmyth",
@@ -76,5 +79,5 @@ class RulesCommands(commands.GroupCog, group_name="rules"):
         )
 
 
-async def setup(bot: commands.Bot):
-    await bot.add_cog(RulesCommands(bot))
+def setup(bot: OutBot) -> RulesCommands:
+    return RulesCommands()

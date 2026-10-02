@@ -41,7 +41,7 @@ class ReportButtons(discord.ui.View):
         emoji="✖️",
     )
     async def report_cancel_button_callback(
-        self, interaction: discord.Interaction, button: discord.ui.button
+        self, interaction: discord.Interaction, button: discord.ui.Button
     ) -> None:
         """
         Cancel the report.
@@ -65,7 +65,7 @@ class ReportButtons(discord.ui.View):
         emoji="🤝",
     )
     async def report_help_button_callback(
-        self, interaction: discord.Interaction, button: discord.ui.button
+        self, interaction: discord.Interaction, button: discord.ui.Button
     ) -> None:
         """
         Tells the user on how to report.

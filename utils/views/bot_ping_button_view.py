@@ -1,12 +1,12 @@
 import discord
 from discord.ext import commands
 
-
 class BotPingButton(discord.ui.View):
     """Creates a button that is invoked when /ping is used."""
 
-    def __init__(self, bot: commands.Bot) -> None:
+    def __init__(self, bot) -> None:
         super().__init__(timeout=300)
+        # self.bot: OutBot = bot
         self.bot = bot
 
     @discord.ui.button(label="OutBot's Ping", style=discord.ButtonStyle.secondary)

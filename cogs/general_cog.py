@@ -2,16 +2,19 @@ import asyncio
 
 import discord
 from discord import app_commands
-from discord.ext import commands
 
+from bot import OutBot
 from config import EMOJIS
 from utils import send_censor_word_warning
 
 
-class GeneralCommands(commands.GroupCog, group_name="utility"):
+class GeneralCommands(app_commands.Group):
     """Commands that do not fit any other category."""
 
-    @discord.app_commands.command(
+    def __init__(self):
+        super().__init__(name="utility")
+
+    @app_commands.command(
         name="greet",
         description="OutBot greets you!",
     )
@@ -33,11 +36,11 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
             f"Hello, {interaction.user.mention}! How are you?",
         )
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="dm",
         description="OutBot DMs you. This command requires your DMs to be turned on.",
     )
-    @discord.app_commands.describe(message="What would you like OutBot to DM you?")
+    @app_commands.describe(message="What would you like OutBot to DM you?")
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def dm(
         self,
@@ -61,9 +64,7 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
             return
 
         try:
-            await interaction.user.send(
-                f"||{message}||", allowed_mentions=discord.AllowedMentions.none()
-            )
+            await interaction.user.send(f"||{message}||")
 
             await interaction.response.send_message(
                 "DM has been sent!",
@@ -76,11 +77,11 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
                 ephemeral=True,
             )
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="echo",
         description="Make OutBot say a specific message!",
     )
-    @discord.app_commands.describe(message="What would you like OutBot to say?")
+    @app_commands.describe(message="What would you like OutBot to say?")
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
     async def echo(
         self,
@@ -113,14 +114,13 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         )
         await interaction.response.send_message(
             embed=embed_message,
-            allowed_mentions=discord.AllowedMentions.none(),
         )
 
-    @discord.app_commands.command(
+    @app_commands.command(
         name="poll",
         description="Create a poll.",
     )
-    @discord.app_commands.describe(
+    @app_commands.describe(
         title="What is your poll's title?",
         question="What is the question you would like to ask?",
     )
@@ -158,7 +158,6 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
 
         await interaction.followup.send(
             embed=embed_message,
-            allowed_mentions=discord.AllowedMentions.none(),
         )
 
         poll_message = await interaction.original_response()
@@ -166,5 +165,5 @@ class GeneralCommands(commands.GroupCog, group_name="utility"):
         asyncio.gather(*(poll_message.add_reaction(emoji) for emoji in EMOJIS))
 
 
-async def setup(bot: commands.Bot) -> None:
-    await bot.add_cog(GeneralCommands(bot))
+def setup(bot: OutBot) -> GeneralCommands:
+    return GeneralCommands()

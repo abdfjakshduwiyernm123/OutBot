@@ -25,3 +25,4 @@ async def send_censor_word_warning(
             ephemeral=True,
         )
         return contains_censor_word
+    return False

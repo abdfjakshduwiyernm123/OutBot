@@ -26,8 +26,10 @@ Please include:
 - The potential impact
 - Any relevant screenshots or other relevant information
 
+**ALL** versions are supported and will receive security updates.
+
 ---
 
 # Developer Notes
 
-Your issues will be addressed and patched in under 48 hours. If the vulnerability does not exist, you will be banned from reporting them. This excludes misunderstanding.
+Please make sure you try to explain in as much detail as you can. You may use ai to make a security report but please make sure to proofread it and avoid giving the llm sensitive information.

@@ -1,8 +1,14 @@
+# OutBot Bug Fix - 2nd October 2026
+
+## Update 0.5.13
+
+- Fixed developer_id not being thrown away when converted from a string to an int.
+
 # OutBot Bug Fix - 27 September 2026
 
 ## Update 0.5.12
 
-- Fixed /sync not working (for devlopers)
+- Fixed /sync not working (for developers)
 
 # OutBot Bug Fix - 25 September 2026
 

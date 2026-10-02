@@ -34,7 +34,7 @@ OutBot is an open source, privacy respecting Discord utility bot built using **d
 
 OutBot uses **NO** privileged intents. OutBot does **NOT** use **ANY GATEWAY INTENTS**. Intents will be covered in more detail [here](#intents).
 
-OutBot's Current Version: **v0.5.12**
+OutBot's Current Version: **v0.5.13**
 
 ## Intents
 
@@ -116,9 +116,7 @@ Open source is when a project's source code is available. Users can modify, dist
 
 # OutBot's Config
 
-OutBot does **NOT** use prefix  commands. Therefore, command_prefix="NONE". OutBot uses **NO** gateway intents. Therefore, intents=discord.Intents.none()
-
-Command prefix has to be set to a string. "NONE" was used to show that OutBot uses no prefix commands. You have freedom to change that. Because OutBot uses no privillaged intents, "(current time) WARNING  discord.ext.commands.bot Privileged message content intent is missing, commands may not work as expected." will be displayed in the terminal. If you want prefix commands enable the "Message Content" privillaged intent. You can ignore it if you don't plan on using prefix commands.
+OutBot does **NOT** use prefix  commands. OutBot uses **NO** gateway intents. Therefore, intents=discord.Intents.none()
 
 ---
 

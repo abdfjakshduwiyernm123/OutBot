@@ -8,6 +8,6 @@ def run_bot() -> None:
     """Runs OutBot"""
     outbot = custom_setup()
     try:
-        outbot.run(load_env_bot_token())
+        outbot.run(load_env_bot_token(), reconnect=True)
     except discord.LoginFailure:
         raise RuntimeError('The Discord bot token in "config/.env" is invalid.')
