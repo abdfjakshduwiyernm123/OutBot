@@ -25,7 +25,8 @@ CENSOR_WORDS: Final[tuple[str, ...]] = (
     "fuckup",
     "cum",
     "prick",
-    "faggotist",
+    "faggotist", 
+    # DO NOT CHANGE "cunt" to "count" or "hunt". Ignore codespell ONLY FOR THIS FILE
     "cunt",
     "nigguh",
     "niagr",

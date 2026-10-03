@@ -8,7 +8,6 @@ from utils import (
     CONTRIBUTING_POLICY,
     DEVELOPER,
     GITHUB_LINK,
-    LOG_RETENTION,
     OUTBOT_INVITE_LINK,
     OUTBOT_LICENSE,
     PRIVACY_POLICY,
@@ -66,33 +65,44 @@ class InformationCommands(app_commands.Group):
         embed_message: discord.Embed = discord.Embed(
             title="📋 OutBot's Command List\n\n",
             description=(
-                "# 💻 Developer Commands\n\n"
-                "- **/developers**: Who are OutBot's developers?\n\n"
-                "# 🎉 Fun Commands\n\n"
-                "- **/freenitro**: Click a button that rickrolls you.\n"
-                "- **/fakeban**: Allows users to fakeban anyone!\n\n"
-                "# ⚙️ General Commands\n\n"
-                "- **/hello**: Says hello to the user.\n"
-                "- **/dm** - OutBot DMs you.\n"
-                "- **/ehco**: You tell the bot what to say!\n"
-                "- **/ping**: Click a button that pings you!\n"
-                "- **/poll**: Creates an embed with 10 default reactions.\n\n"
-                "# 🧠 Information Commands\n\n"
-                "-  **/help**: OutBot's Command Guide.\n"
-                "- **/outbot**: Useful information about OutBot.\n"
-                "- **/roadmap**: OutBot's planned features.\n\n"
-                "# 🔗 Links Commands\n\n"
-                "- **/youtube**: OutMyth's YouTube channel link.\n"
-                "- **/discord**: OutMyth's Discord server invite link.\n"
-                "- **/invite**: OutBot's invite link.**\n\n"
-                "# ⚖️ Rules Commands\n\n"
-                "- **outmythrules**: OutMyth's Rules.\n"
-                "- **outbotrules**: OutBot's Rules.\n\n"
-                "# 🙋‍♂️ Support Commands\n\n"
-                "- **/reporthelp**: Teaches you how to create a good report.\n"
-                "- **/report**: Report an issue. Including security related ones.\n"
-                "- **feedbackhelp**: Teaches you how to create good feedback.\n"
-                "- **feedback**: Give feedback to OutBot's developers.\n"
+                "# 💻 Developer Commands: \n"
+                "- **`/developer devs`**\n"
+                "- **`/developer sync`**\n"
+                "#\n 🎉 Fun Commands: \n"
+                "- **`/fun freenitro`**\n"
+                "- **`/fun fakeban`**\n"
+                "#\n ⚙️ General Commands: \n"
+                "- **`/general hello`**\n"
+                "- **`/general dm`**\n"
+                "- **`/general ehco`**\n"
+                "- **`/general poll`**\n"
+                "#\n 🧠 Information Commands: \n"
+                "- **`/info ping`**\n"
+                "- **`/info help`**\n"
+                "- **`/info about`**\n"
+                "- **`/info roadmap`**\n"
+                "#\n 🔗 Links Commands: \n"
+                "- **`/links discord`**\n"
+                "- **/links invite**\n"
+                "- **`/links github`**\n"
+                "- **`/links contributing_policy`**\n"
+                "- **`/links contributing_policy`**\n"
+                "- **`/links contributing policy`**\n"
+                "- **`/links license`**\n"
+                "- **`/links privacy_policy`**\n"
+                "- **`/links tos`**\n"
+                "- **`/links security_policy`**\n"
+                "#\n 🛡️ Moderation Commands: \n"
+                "- **`/moderation ban`**\n"
+                "#\n 🔐 Privacy Commands: \n"
+                "- **`/privacy privacy_information`**\n"
+                "- **`/privacy data`**\n"
+                "#\n ⚖️ Rules Commands: \n"
+                "- **`/rules outmythrules`**\n"
+                "- **`/rules outbotrules`**\n"
+                "#\n 🙋‍♂️ Support Commands: \n"
+                "- **`/support report`**\n"
+                "- **`/support feedback`**\n"
             ),
             colour=discord.Colour.blurple(),
         )
@@ -119,7 +129,6 @@ class InformationCommands(app_commands.Group):
             description=(
                 "# General Information\n\n"
                 f"- Outbot's Version: v{BOT_VERSION}\n"
-                f"- Log Retention: {LOG_RETENTION}\n"
                 "- OutBot is open source under a MIT license\n\n"
                 "# Useful Links:\n\n"
                 f"- {GITHUB_LINK}\n"
@@ -160,16 +169,22 @@ class InformationCommands(app_commands.Group):
         embed_message: discord.Embed = discord.Embed(
             title="OutBot's Planned Features!",
             description=(
-                "- Add more interactive and fun user commands.\n"
-                "- Write more tests and clearer docs.\n"
-                "- Add ymal files to .github.\n"
-                "- Add better way to report.\n"
-                "- More robust code.\n"
-                "- Host Outbot's privacy policy and terms of service on a website.\n"
+                "# User: \n"
+                "- ||🛠️|| More interactive and fun commands for users\n"
+                "- ||🛠️|| Add better way to report.\n"
+                "- ||❌️|| Host Outbot's privacy policy and terms of service on a website.\n"
+                "\n# Code quality: \n"
+                "- ||🛠️|| More tests and clearer docs.\n"
+                "- ||❌️|| Add ymal files to .github.\n"
+                "- ||✅|| More robust code.\n"
             ),
             colour=discord.Colour.green(),
         )
-
+        embed_message.add_field(
+            name="Key:",
+            value="✅ = Feature completed - 🛠️ = In development - ❌️ = Did not started to working on feature",
+            inline=True,
+        )
         await interaction.response.send_message(embed=embed_message)
 
 

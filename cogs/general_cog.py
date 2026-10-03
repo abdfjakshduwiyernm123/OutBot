@@ -12,7 +12,7 @@ class GeneralCommands(app_commands.Group):
     """Commands that do not fit any other category."""
 
     def __init__(self):
-        super().__init__(name="utility")
+        super().__init__(name="general")
 
     @app_commands.command(
         name="greet",

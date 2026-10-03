@@ -6,10 +6,24 @@ class ReportDropdown(ui.View):
     @discord.ui.select(
         placeholder="Please select one of the options.",
         options=[
-            discord.SelectOption(label="Harassment", value="harassment", emoji="🚫"),
-            discord.SelectOption(label="OutBot Bug", value="bug", emoji="🐛"),
-            discord.SelectOption(label="Sexting", value="Sexting", emoji="🔞"),
-            discord.SelectOption(label="Other", value="other", emoji="➕"),
+            discord.SelectOption(
+                label="Harassment",
+                description="Report someone because of harassment",
+                emoji="🚫",
+            ),
+            discord.SelectOption(
+                label="OutBot Bug", description="Report a bug in OutBot", emoji="🐛"
+            ),
+            discord.SelectOption(
+                label="Sexting",
+                description="Report someone for sexting sexting",
+                emoji="🔞",
+            ),
+            discord.SelectOption(
+                label="Other",
+                description="Report someone for another reason",
+                emoji="➕",
+            ),
         ],
     )
     async def report_dropdown_callback(

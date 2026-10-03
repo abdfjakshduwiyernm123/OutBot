@@ -33,4 +33,4 @@ OutBot is 100% open source. Open source allows users to see the source code, dis
 
 # Developer Notes 
 
-If you have any privacy concerns, please open a GitHub issue, or create a ticket on [OutMyth's discord server](https://discord.gg/Sc5vAvTJtc). **DO NOT USER /REPORT OR /FEEDBACK**
+If you have any privacy concerns, please open a GitHub issue, or create a ticket on [OutMyth's discord server](https://discord.gg/Sc5vAvTJtc). **DO NOT USE /REPORT OR /FEEDBACK**

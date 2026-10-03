@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+
 
 class BotPingButton(discord.ui.View):
     """Creates a button that is invoked when /ping is used."""
