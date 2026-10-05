@@ -5,7 +5,6 @@ from discord import app_commands
 from dotenv import load_dotenv
 
 from bot import OutBot
-from utils import DEVELOPER
 
 load_dotenv("config/.env")
 developer_id_str: str | None = os.getenv("DEVELOPER_ID")
@@ -25,10 +24,11 @@ class DeveloperCommands(app_commands.Group):
         self.bot: OutBot = bot
 
     @app_commands.command(
-        name="devs", description="What developers contributed to OutBot?"
+        name="credit",
+        description="Who has contributed to OutBot or is a developer at OutMyth?",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def devs(
+    async def credit(
         self,
         interaction: discord.Interaction,
     ) -> None:
@@ -42,8 +42,8 @@ class DeveloperCommands(app_commands.Group):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message: discord.Embed = discord.Embed(
-            title="OutBot's Developers:",
-            description=f"{DEVELOPER} are the developer/s for OutBot currently!",
+            title="OutBot's Contributers/Developers: ",
+            description="'mythordian' is the only developer/s and/or contributer/s for OutBot currently!",
             colour=discord.Colour.red(),
         )
         await interaction.response.send_message(embed=embed_message)

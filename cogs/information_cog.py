@@ -4,16 +4,11 @@ from discord import app_commands
 from bot import OutBot
 from utils import (
     BOT_VERSION,
-    CODE_OF_CONDUCT,
-    CONTRIBUTING_POLICY,
-    DEVELOPER,
     GITHUB_LINK,
     OUTBOT_INVITE_LINK,
     OUTBOT_LICENSE,
     PRIVACY_POLICY,
-    SECURITY_POLICY,
     TERMS_OF_SERVICE,
-    BotPingButton,
 )
 
 
@@ -42,7 +37,18 @@ class InformationCommands(app_commands.Group):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        await interaction.response.send_message(view=BotPingButton(self.bot))
+        gateway_latency: int = round(self.bot.latency * 1000)
+
+        embed_message = discord.Embed(
+            title="Pong 🏓!",
+            description=f"OutBot's gateway latency: `{gateway_latency}`ms!",
+            colour=discord.Colour.green(),
+        )
+
+        await interaction.response.send_message(
+            embed=embed_message,
+            ephemeral=True,
+        )
 
     @app_commands.command(
         name="help",
@@ -63,9 +69,9 @@ class InformationCommands(app_commands.Group):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message: discord.Embed = discord.Embed(
-            title="📋 OutBot's Command List\n\n",
+            title="📋 OutBot's Command List: \n",
             description=(
-                "# 💻 Developer Commands: \n"
+                "\n# 💻 Developer Commands: \n"
                 "- **`/developer devs`**\n"
                 "- **`/developer sync`**\n"
                 "#\n 🎉 Fun Commands: \n"
@@ -81,17 +87,17 @@ class InformationCommands(app_commands.Group):
                 "- **`/info help`**\n"
                 "- **`/info about`**\n"
                 "- **`/info roadmap`**\n"
-                "#\n 🔗 Links Commands: \n"
-                "- **`/links discord`**\n"
-                "- **/links invite**\n"
-                "- **`/links github`**\n"
-                "- **`/links contributing_policy`**\n"
-                "- **`/links contributing_policy`**\n"
-                "- **`/links contributing policy`**\n"
-                "- **`/links license`**\n"
-                "- **`/links privacy_policy`**\n"
-                "- **`/links tos`**\n"
-                "- **`/links security_policy`**\n"
+                "#\n 🔗 Link Commands: \n"
+                "- **`/link discord`**\n"
+                "- **`/link invite`**\n"
+                "- **`/link github`**\n"
+                "- **`/link contributing_policy`**\n"
+                "- **`/link contributing_policy`**\n"
+                "- **`/link contributing policy`**\n"
+                "- **`/link license`**\n"
+                "- **`/link privacy_policy`**\n"
+                "- **`/link tos`**\n"
+                "- **`/link security_policy`**\n"
                 "#\n 🛡️ Moderation Commands: \n"
                 "- **`/moderation ban`**\n"
                 "#\n 🔐 Privacy Commands: \n"
@@ -125,29 +131,20 @@ class InformationCommands(app_commands.Group):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message: discord.Embed = discord.Embed(
-            title="About",
+            title="About: ",
             description=(
-                "# General Information\n\n"
+                "Outbot is a general utility bot that takes user privacy and security seriously.\n"
+                "Most discord bots do not. OutBot is a general purpose utility bot.\n"
                 f"- Outbot's Version: v{BOT_VERSION}\n"
-                "- OutBot is open source under a MIT license\n\n"
-                "# Useful Links:\n\n"
-                f"- {GITHUB_LINK}\n"
-                f"- {OUTBOT_INVITE_LINK}\n"
-                f"- {OUTBOT_LICENSE}\n"
-                f"- {PRIVACY_POLICY}\n"
-                f"- {SECURITY_POLICY}\n"
-                f"- {TERMS_OF_SERVICE}\n"
-                f"- {CONTRIBUTING_POLICY}\n"
-                f"- {CODE_OF_CONDUCT}\n\n"
+                f"OutBot's sourse code is available at: {GITHUB_LINK} under {OUTBOT_LICENSE}\n"
+                f"{OUTBOT_INVITE_LINK}\n"
+                f"{PRIVACY_POLICY}\n"
+                f"{TERMS_OF_SERVICE}\n"
             ),
             colour=discord.Colour.blurple(),
         )
-        embed_message.add_field(
-            name="OutBot",
-            value="Outbot is a general utility bot that takes user privacy and security seriously. Most discord bots do not. You can find out more via the links above.",
-        )
         embed_message.set_footer(
-            text=f"OutBot was made with python using discord.py. OutBot was developed by {DEVELOPER}",
+            text="OutBot was made with python using discord.py.",
         )
 
         await interaction.response.send_message(embed=embed_message)
@@ -167,7 +164,7 @@ class InformationCommands(app_commands.Group):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message: discord.Embed = discord.Embed(
-            title="OutBot's Planned Features!",
+            title="OutBot's Planned Features: ",
             description=(
                 "# User: \n"
                 "- ||🛠️|| More interactive and fun commands for users\n"
@@ -181,7 +178,7 @@ class InformationCommands(app_commands.Group):
             colour=discord.Colour.green(),
         )
         embed_message.add_field(
-            name="Key:",
+            name="Key: ",
             value="✅ = Feature completed - 🛠️ = In development - ❌️ = Did not started to working on feature",
             inline=True,
         )

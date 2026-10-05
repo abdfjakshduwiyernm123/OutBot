@@ -16,7 +16,7 @@ class RulesCommands(app_commands.Group):
         description="OutMyth's Discord Server Rules.",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def outmythrules(
+    async def outmyth_rules(
         self,
         interaction: discord.Interaction,
     ) -> None:
@@ -58,7 +58,7 @@ class RulesCommands(app_commands.Group):
         description="OutBot's Rules!",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def outbotrules(
+    async def outbot_rules(
         self,
         interaction: discord.Interaction,
     ) -> None:

@@ -2,7 +2,6 @@ from typing import Final
 
 BOT_VERSION: Final[str] = "0.5.12"
 DATE_CREATED: Final[str] = "July 11th 2026"
-DEVELOPER: Final[str] = "mythordian"
 
 CODE_OF_CONDUCT: Final[str] = (
     "[OutBot's Code Of Conduct](<https://github.com/abdfjakshduwiyernm123/OutBot?tab=coc-ov-file>)"
@@ -17,7 +16,8 @@ GITHUB_LINK: Final[str] = (
     "[OutBot's GitHub Link](<https://github.com/abdfjakshduwiyernm123/OutBot/>)"
 )
 OUTBOT_INVITE_LINK: Final[str] = (
-    "[OUtBot's Invite link](<https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=bot%20applications.commands>)"
+    "[OutBot's Invite Link Guild (Server)](<https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=bot%20applications.commands>) or "
+    "[OutBot's Invite Link User](<https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=applications.commands>)"
 )
 OUTBOT_LICENSE: Final[str] = (
     "[OutBot's License](<https://github.com/abdfjakshduwiyernm123/OutBot?tab=MIT-1-ov-file>)"

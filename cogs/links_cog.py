@@ -8,7 +8,6 @@ from utils import (
     DISCORD_SERVER_INVITE_LINK,
     GITHUB_LINK,
     OUTBOT_INVITE_LINK,
-    OUTBOT_LICENSE,
     PRIVACY_POLICY,
     SECURITY_POLICY,
     TERMS_OF_SERVICE,
@@ -19,7 +18,7 @@ class LinksCommands(app_commands.Group):
     """Useful links about OutBot."""
 
     def __init__(self) -> None:
-        super().__init__(name="links")
+        super().__init__(name="link")
 
     @app_commands.command(
         name="discord",
@@ -78,13 +77,13 @@ class LinksCommands(app_commands.Group):
         await interaction.response.send_message(GITHUB_LINK)
 
     @app_commands.command(
-        name="code_of_conduct",
-        description="OutBot's Code Of Conduct.",
+        name="policy",
+        description="All of OutBot's Policies in one place.",
     )
     @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def code_of_conduct(self, interaction: discord.Interaction) -> None:
+    async def policy(self, interaction: discord.Interaction) -> None:
         """
-        Sends OutBot's code of conduct link.
+        Sends all of OutBot's policy link.
 
         Args:
             interaction (discord.Interaction): The Discord command being invoked.
@@ -92,92 +91,19 @@ class LinksCommands(app_commands.Group):
         Cooldown:
             1 message per user every 30 seconds. This only applies the command they just used.
         """
-        await interaction.response.send_message(CODE_OF_CONDUCT)
+        embed_message = discord.Embed(
+            title="OutBot's Policy Links: \n",
+            description=(
+                f"- {PRIVACY_POLICY}\n"
+                f"- {TERMS_OF_SERVICE}\n"
+                f"- {SECURITY_POLICY}\n"
+                f"- {CONTRIBUTING_POLICY}\n"
+                f"- {CODE_OF_CONDUCT}\n"
+            ),
+            colour=discord.Colour.dark_grey(),
+        )
 
-    @app_commands.command(
-        name="contributing_policy",
-        description="OutBot's Contributing Policy",
-    )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def contributing_policy(self, interaction: discord.Interaction) -> None:
-        """
-        Sends OutBot's Contributing policy link.
-
-        Args:
-            interaction (discord.Interaction): The Discord command being invoked.
-
-        Cooldown:
-            1 message per user every 30 seconds. This only applies the command they just used.
-        """
-        await interaction.response.send_message(CONTRIBUTING_POLICY)
-
-    @app_commands.command(
-        name="licnese",
-        description="OutBot's License.",
-    )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def licnese(self, interaction: discord.Interaction) -> None:
-        """
-        Sends OutBot's licnese link.
-
-        Args:
-            interaction (discord.Interaction): The Discord command being invoked.
-
-        Cooldown:
-            1 message per user every 30 seconds. This only applies the command they just used.
-        """
-        await interaction.response.send_message(OUTBOT_LICENSE)
-
-    @app_commands.command(
-        name="privacy_policy",
-        description="OutBot's Privacy Policy.",
-    )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def privacy_policy(self, interaction: discord.Interaction) -> None:
-        """
-        Sends OutBot's privacy policy link.
-
-        Args:
-            interaction (discord.Interaction): The Discord command being invoked.
-
-        Cooldown:
-            1 message per user every 30 seconds. This only applies the command they just used.
-        """
-        await interaction.response.send_message(PRIVACY_POLICY)
-
-    @app_commands.command(
-        name="tos",
-        description="OutBot's Terms Of Service.",
-    )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def tos(self, interaction: discord.Interaction) -> None:
-        """
-        Sends OutBot's Terms Of Service link.
-
-        Args:
-            interaction (discord.Interaction): The Discord command being invoked.
-
-        Cooldown:
-            1 message per user every 30 seconds. This only applies the command they just used.
-        """
-        await interaction.response.send_message(TERMS_OF_SERVICE)
-
-    @app_commands.command(
-        name="security_policy",
-        description="OutBot's Security Policy.",
-    )
-    @app_commands.checks.cooldown(1, 30, key=lambda interaction: interaction.user.id)
-    async def security_policy(self, interaction: discord.Interaction) -> None:
-        """
-        Sends OutBot's security policy link.
-
-        Args:
-            interaction (discord.Interaction): The Discord command being invoked.
-
-        Cooldown:
-            1 message per user every 30 seconds. This only applies the command they just used.
-        """
-        await interaction.response.send_message(SECURITY_POLICY)
+        await interaction.response.send_message(embed=embed_message)
 
 
 def setup(bot: OutBot) -> LinksCommands:

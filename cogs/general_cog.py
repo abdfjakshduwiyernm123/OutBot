@@ -33,7 +33,7 @@ class GeneralCommands(app_commands.Group):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         await interaction.response.send_message(
-            f"Hello, {interaction.user.mention}! How are you?",
+            f"Hello, {interaction.user.mention}! How are you?"
         )
 
     @app_commands.command(
@@ -106,7 +106,7 @@ class GeneralCommands(app_commands.Group):
 
         embed_message: discord.Embed = discord.Embed(
             title=f"{interaction.user} has said: ",
-            description=f"{message}",
+            description=message,
             colour=discord.Colour.green(),
         )
         embed_message.set_footer(

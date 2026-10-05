@@ -50,14 +50,14 @@ A privileged intent is an intent that is more sensitive or potentially less priv
 intents = discord.Intents.default()  # Enables all default non-privileged intents
 ```
 
-You can disable specific intents by:  
+You can disable specific gateway intents by:  
 ```py
 intents.guilds = False  # Disables guild intents.
 ```
 
-To disable all non-privileged intents 
+To disable all non-privileged gateway intents 
 ```py
-intents = discord.Intents.none()  # Disables all default non-privileged intents
+intents = discord.Intents.none()  # Disables all default non-privileged gateway intents
 ```
 
 | Name | Privileged | What Does It Do? | Enabled |
@@ -96,7 +96,8 @@ Open source is when a project's source code is available. Users can modify, dist
 
 [OutBot's License](https://github.com/abdfjakshduwiyernm123/OutBot/?tab=MIT-1-ov-file)  
 
-[OutBot's Invite link](https://discord.com/oauth2/authorize?client_id=1525595736706781384)  
+[OutBot's Invite Link Guild (Server)](https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=bot%20applications.commands)  
+[OutBot's Invite Link User](https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=applications.commands)
 
 ---
 
@@ -212,11 +213,18 @@ Create a new file called .env and make sure it is in .gitignore. Create a variab
 
 ## Adding Your Bot To Your Apps/Servers
 
-Go to the [Discord Developer portal Installation Tab](https://discord.com/developers/applications/installation); copy the install link and paste the install link into your browser. Then, choose whether you want OutBot in your apps or if you would like to add OutBot to your server/s. 
+To add OutBot to your apps and/or servers change the placeholder in the links to your bots id.
+
+```text
+https://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&scope=bot%20applications.commands
+OutBot's Invite Link Userhttps://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&scope=applications.commands
+```
+
+To get your bots id, head over to [disord developer portal](https://discord.com/developers) and log in with your discord account. Now click on your application and your bot id should be after application. Eg: https://discord.com/developers/applications/YOUR_BOT_ID  
 
 ## Changing Developer Id
 
-There is one final thing we need to do and that is to change the developer id. By default it is set to OutBot's developers. By keeping it that way, you will NOT be able to sync OutBot's command tree. Go to Discord's settings and enable developer mode. Right click on your profile and click "copy user id". Copy that user id into config/.env (the same file with your disocrd token).  
+There is one final thing we need to do and that is to change the developer id. By default it is set to OutBot's developers. By keeping it that way, you will **NOT** be able to sync OutBot's command tree. Go to Discord's settings and enable developer mode. Right click on your profile and click "copy user id". Copy that user id into config/.env (the same file with your disocrd token).  
 
 
 ## Run OutBot
