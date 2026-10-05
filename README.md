@@ -34,7 +34,7 @@ OutBot is an open source, privacy respecting Discord utility bot built using **d
 
 OutBot uses **NO** privileged intents. OutBot does **NOT** use **ANY GATEWAY INTENTS**. Intents will be covered in more detail [here](#intents).
 
-OutBot's Current Version: **v0.5.13**
+[![GitHub Release](https://img.shields.io/github/v/release/abdfjakshduwiyernm123/OutBot)](https://github.com/abdfjakshduwiyernm123/OutBot/releases/latest)
 
 ## Intents
 
