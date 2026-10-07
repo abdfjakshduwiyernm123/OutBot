@@ -1,6 +1,6 @@
 from typing import Final
 
-BOT_VERSION: Final[str] = "0.5.12"
+BOT_VERSION: Final[str] = "0.5.13"
 DATE_CREATED: Final[str] = "July 11th 2026"
 
 CODE_OF_CONDUCT: Final[str] = (
@@ -17,7 +17,7 @@ GITHUB_LINK: Final[str] = (
 )
 OUTBOT_INVITE_LINK: Final[str] = (
     "[OutBot's Invite Link Guild (Server)](<https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=bot%20applications.commands>) or "
-    "[OutBot's Invite Link User](<https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=applications.commands>)"
+    "[OutBot's Invite Link (User)](<https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=applications.commands>)"
 )
 OUTBOT_LICENSE: Final[str] = (
     "[OutBot's License](<https://github.com/abdfjakshduwiyernm123/OutBot?tab=MIT-1-ov-file>)"

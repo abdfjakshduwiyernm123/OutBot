@@ -136,7 +136,7 @@ async def test_information_commands_roadmap() -> None:
     information_commands = InformationCommands(bot)
 
     await information_commands.roadmap.callback(information_commands, interaction)
-    
+
     call = interaction.response.send_message.call_args
     embed_message = call.kwargs["embed"]
 

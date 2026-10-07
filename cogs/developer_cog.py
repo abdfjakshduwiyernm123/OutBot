@@ -42,8 +42,8 @@ class DeveloperCommands(app_commands.Group):
             1 message per user every 30 seconds. This only applies the command they just used.
         """
         embed_message: discord.Embed = discord.Embed(
-            title="OutBot's Contributers/Developers: ",
-            description="'mythordian' is the only developer/s and/or contributer/s for OutBot currently!",
+            title="OutBot's Contributors/Developers: ",
+            description="'mythordian' is the only developer/s and/or contributor/s for OutBot currently!",
             colour=discord.Colour.red(),
         )
         await interaction.response.send_message(embed=embed_message)

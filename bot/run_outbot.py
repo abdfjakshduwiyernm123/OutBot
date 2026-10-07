@@ -1,7 +1,7 @@
 import discord
 
-from .load_env import load_env_bot_token
-from .outbot_custom_setup import custom_setup
+from bot import load_env_bot_token
+from config.outbot_custom_setup import custom_setup
 
 
 def run_bot() -> None:

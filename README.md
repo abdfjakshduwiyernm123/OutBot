@@ -88,16 +88,7 @@ Open source is when a project's source code is available. Users can modify, dist
 
 # Useful Links
 
-[OutBot's TOS](https://github.com/abdfjakshduwiyernm123/OutBot/blob/main/TERMS.md)  
-
-[OutBot's Privacy Policy](https://github.com/abdfjakshduwiyernm123/OutBot/blob/main/PRIVACY.md)  
-
-[OutBot's Security Policy](https://github.com/abdfjakshduwiyernm123/OutBot?tab=security-ov-file)  
-
-[OutBot's License](https://github.com/abdfjakshduwiyernm123/OutBot/?tab=MIT-1-ov-file)  
-
-[OutBot's Invite Link Guild (Server)](https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=bot%20applications.commands)  
-[OutBot's Invite Link User](https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=applications.commands)
+[OutBot's TOS](https://github.com/abdfjakshduwiyernm123/OutBot/blob/main/TERMS.md) | [OutBot's Privacy Policy](https://github.com/abdfjakshduwiyernm123/OutBot/blob/main/PRIVACY.md) | [OutBot's Security Policy](https://github.com/abdfjakshduwiyernm123/OutBot?tab=security-ov-file) | [OutBot's License](https://github.com/abdfjakshduwiyernm123/OutBot/?tab=MIT-1-ov-file) | [OutBot's Invite Link Guild (Server)](https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=bot%20applications.commands) | [OutBot's Invite Link (User)](https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=applications.commands)
 
 ---
 
@@ -209,18 +200,18 @@ Head over to [Discord Developer portal](https://discord.com/developers/applicati
 
 ## Creating .env
 
-Create a new file called .env and make sure it is in .gitignore. Create a variable called DISCORD_TOKEN. To get your discord bot's token. Head over to [Discord Developer Portal](https://discord.com/developers/home), click "Bot" and then click "Reset Token". Click "Yes do it to" confirm. Copy your Discord token into the file ".env".
+Create a new file called config/.env and make sure it is in .gitignore. Create a variable called DISCORD_TOKEN. To get your discord bot's token. Head over to [Discord Developer Portal](https://discord.com/developers/home), click "Bot" and then click "Reset Token". Click "Yes do it to" confirm. Copy your Discord token into the file ".env".
 
 ## Adding Your Bot To Your Apps/Servers
 
 To add OutBot to your apps and/or servers change the placeholder in the links to your bots id.
 
 ```text
-https://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&scope=bot%20applications.commands
-OutBot's Invite Link Userhttps://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&scope=applications.commands
+OutBot's Invite Link Guild (Server): https://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&scope=bot%20applications.commands
+OutBot's Invite Link (User): https://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&scope=applications.commands
 ```
 
-To get your bots id, head over to [disord developer portal](https://discord.com/developers) and log in with your discord account. Now click on your application and your bot id should be after application. Eg: https://discord.com/developers/applications/YOUR_BOT_ID  
+To get your bots id, head over to [discord developer portal](https://discord.com/developers) and log in with your discord account. Now click on your application and your bot id should be after application. Eg: https://discord.com/developers/applications/YOUR_BOT_ID  
 
 ## Changing Developer Id
 
@@ -241,7 +232,7 @@ py -m bot.main
 
 # IMPORTANT NOTICE
 
-**IF YOU DO NOT ADD YOUR DISCORD BOT TOKEN TO ".env", A RUNTIME ERROR WILL BE RAISED.**
+**IF YOU DO NOT ADD YOUR DISCORD BOT TOKEN TO "config/.env", A RUNTIME ERROR WILL BE RAISED.**
 
 # Inviting OutBot To Your Apps/Discord Servers
 

@@ -1,10 +1,10 @@
 import discord
 
-from .outbot import OutBot
+from bot.outbot import OutBot
 
 
 def custom_setup() -> OutBot:
-    """Util function to reuse OutBot's custom setup."""
+    """Util function to reuse OutBot's custom configuration."""
     outbot: OutBot = OutBot(
         activity=discord.Game(name="📖 Reading Documentation"),
         allowed_mentions=discord.AllowedMentions.none(),

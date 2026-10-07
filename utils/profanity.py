@@ -21,7 +21,7 @@ async def send_censor_word_warning(
 
     if contains_censor_word:
         await interaction.response.send_message(
-            "Your message cannot contain swear words/other offensive words. To report an issue, please open a ticket.",
+                "Hey! You cannot use that word!"
             ephemeral=True,
         )
         return contains_censor_word

@@ -22,8 +22,8 @@ async def test_developer_commands_credit() -> None:
     call = interaction.response.send_message.call_args
     embed_message = call.kwargs["embed"]
 
-    assert embed_message.title == "OutBot's Contributers/Developers: "
+    assert embed_message.title == "OutBot's Contributors/Developers: "
     assert embed_message.description == (
-        "'mythordian' is the only developer/s and/or contributer/s for OutBot currently!"
+        "'mythordian' is the only developer/s and/or contributor/s for OutBot currently!"
     )
     assert embed_message.colour == discord.Colour.red()
