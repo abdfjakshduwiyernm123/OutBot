@@ -100,39 +100,37 @@ Fixed tests not working.
 
 ## Version 0.5.0
 
-### Removed
+### Added
 
-- /outmyth and /outhis
-- Removed most try except blocks and replaced it with error handling
-- Commands pinging you every time you invoke them except /ping
-- 6 poll reactions
-- ephemeral for /say (/echo)
+- **type hints**
+- **.gitignore**
+- **Improved documentation**
+- **All commands are inside cogs**
+- **Centralized error handling**
+- **Improved code readability**
+- **Updated all commands and commands quality**
+- **Added an MIT License, contributing, code of conduct, tos, privacy policy, and security to OutBot's repository**
+- **New commands**
+- **Improved ux and added buttons to the commands /ping and /freenitro**
+- **Created a test for /developer**
+- **Custom logger**
+- **Logs that delete themselves daily**
 
 ### Renamed
 
-- /rickroll ---> /freenitro
-- /outbot ---> /about
-- /say ---> /echo
-- /serverlink ---> /discord
-- /hello ---> /greet
+- **/rickroll ---> /freenitro**
+- **/outbot ---> /about**
+- **/say ---> /echo**
+- **/serverlink ---> /discord**
+- **/hello ---> /greet**
 
-### Added / removed
+### Removed
 
-- type hints
-- .gitignore
-- Improved documentation
-- All commands are inside cogs
-- Centralized error handling
-- Improved code readability
-- Updated all commands and commands quality
-- Added an MIT License, contributing, code of conduct, tos, privacy policy, and security to OutBot's repository
-- New commands (/privacy, /data, /logs, /developer, /reporthelp, /report, /feedbackhelp, /feedback, /fakeban)
-- Improved ux and added buttons to the commands /ping and /freenitro
-- Created a test for /developer
-- Custom logger 
-- Logs that delete themselves daily
-
-Update 0.6 will more interactive commands. I think I have not been adding enough features to OutBot. 
+- **/outmyth and /outhis**
+- **Removed most try except blocks and replaced it with error handling**
+- **Commands pinging you every time you invoke them except /ping**
+- **6 poll reactions**
+- **ephemeral for /echo**
 
 ---
 
@@ -140,25 +138,17 @@ Update 0.6 will more interactive commands. I think I have not been adding enough
 
 ## **Version 0.4**
 
-- **New slash commands** (/rickroll, /invite, /roadmap, /serverlink, /youtube, /ping, /outbot, /botrules)
-- **Removed prefix commands**
-- **Improved readability** (Code ran through black)
-- **on_ready print statement update**
+- **New slash commands**
+- **Removed all prefix commands**
+- **Improved readability**
 - **All typos fixed**
 - **Bugs Patched**
-- **Most comments changed to doc strings**
 - **Log mode | w ---> a**
-- **emojis tuple is in a new file called emojis.py**
-- **Imports sorted**
-- **More branches**
-- **Member intents enabled** this is for adding/removing onboarding commands
 - **Removed /outhis command**
 - **Error handling for /dm and /say**
-- **Checks if token is none**
-- **Better command names**
 - **14 new poll reactions**
-
-> **This update was mainly focused on patching bugs. Update 0.5 will add a lot more commands. Update 0.5 is aimed to come out before September and is currently in development!**
+- **Better command names**
+- **Checks if token is none**
 
 ---
 
@@ -178,12 +168,9 @@ Update 0.6 will more interactive commands. I think I have not been adding enough
 - **More readable comments**
 - **Better command names**
 - **More readable code**
-- **Description change:** GitHub link added
-
-> **All updates can be found in OutMyth's Discord server in the channel "bot-updates" and "dev-notes".**
+- **Description change**
 
 ---
-
 
 # OutBot - Update - 19th July 2026
 
