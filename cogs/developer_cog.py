@@ -43,7 +43,7 @@ class DeveloperCommands(app_commands.Group):
         """
         embed_message: discord.Embed = discord.Embed(
             title="OutBot's Contributors/Developers: ",
-            description="'mythordian' is the only developer/s and/or contributor/s for OutBot currently!",
+            description="'someVeryCoolProgrammer' is the only developer/s and/or contributor/s for OutBot currently!",
             colour=discord.Colour.red(),
         )
         await interaction.response.send_message(embed=embed_message)

@@ -2,37 +2,37 @@
 
 ## Update 0.5.13
 
-- Fixed developer_id not being thrown away when converted from a string to an int.
+- **Fixed developer_id not being thrown away when converted from a string to an int**
 
 # OutBot Bug Fix - 27 September 2026
 
 ## Update 0.5.12
 
-- Fixed /sync not working (for developers)
+- **Fixed /sync not working**
 
 # OutBot Bug Fix - 25 September 2026
 
 ## Update 0.5.11
 
-- Fixed rate limit message not being sent.
+- **Fixed rate limit message not being sent**
 
 # OutBot Bug Fix - 25 September 2026
 
 ## Update 0.5.10
 
-- Fixed discord developer id not being able to be none.
+- **Fixed discord developer id not being able to be none**
 
 # OutBot Bug Fix - 22 September 2026
 
 ## Update 0.5.9
 
-- Fixed 'bot is not definied' in the command /ping
+- **Fixed "bot is not definied" in the command /ping**
 
 # OutBot Bug Fix - 19 September 2026
 
 ## Update 0.5.8
 
-- discord.user.id ---> interaction user.id
+- **discord.user.id ---> interaction user.id**
 
 ---
 
@@ -40,9 +40,9 @@
 
 ## Update 0.5.7
 
-- Fixed unexpected error handling
-- Fixed undifined ephemeral in rate limit error handling
-- interaction.followup.send_message ---> interaction.followup.send
+- **Fixed unexpected error handling**
+- **Fixed undifined ephemeral in rate limit error handling**
+- **interaction.followup.send_message ---> interaction.followup.send**
 
 ---
 
@@ -50,7 +50,7 @@
 
 ## Update 0.5.6
 
-- Fixed /sync not working and links cog spelling errors/dupe commands
+- **Fixed /sync not working**
 
 ---
 
@@ -58,7 +58,7 @@
 
 ## Update 0.5.5
 
-- Fixed rate limit not working
+- **Fixed rate limit not working**
 
 ---
 
@@ -66,9 +66,9 @@
 
 ## Update 0.5.4
 
-- Fixed undefined name PingUserButton and type hint OutBot
-- Added bitch to censor words
-- Command prefix set to null terminator (\0)
+- **Fixed undefined name PingUserButton and type hint OutBot**
+- **Added "bitch" to censor words**
+- **Command prefix set to null terminator**
 
 ---
 
@@ -76,7 +76,7 @@
 
 # Update 0.5.3
 
-Fixed import bug. (cogs/information_cog.py)
+**Fixed import bug**
 
 ---
 
@@ -84,7 +84,7 @@ Fixed import bug. (cogs/information_cog.py)
 
 ## Update 0.5.2
 
-Fixed messages not getting send because of allowed mentions.
+**Fixed messages not getting send because of allowed mentions**
 
 ---
 
@@ -92,11 +92,11 @@ Fixed messages not getting send because of allowed mentions.
 
 ## Version 0.5.1
 
-Fixed tests not working.
+**Fixed tests not working.**
 
 ---
 
-# OutBot - Update - 9 September 2026
+# OutBot Update - 9 September 2026
 
 ## Version 0.5.0
 

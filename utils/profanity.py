@@ -21,9 +21,8 @@ async def send_censor_word_warning(
 
     if contains_censor_word:
         await interaction.response.send_message(
-                "Hey! You cannot use that word!"
+            "A word you said cannot be used!",
             ephemeral=True,
         )
         return contains_censor_word
-    else:
-        return False
+    return False
