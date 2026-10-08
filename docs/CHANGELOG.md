@@ -170,7 +170,6 @@ Update 0.6 will more interactive commands. I think I have not been adding enough
 
 - **Slash commands added.** (/obhelp or do !obhelp)
 - **New prefixes:** !, ?, -,  =,  ;
-- **OutBot's code is now on GItHub** = https://github.com/Mythordian-py/OutBot
 - **Logging change | a ---> w**
 - **Prefix reply command now replies with:** Hello <@mention>! How are you!
 - **Bug fixes**
@@ -179,11 +178,9 @@ Update 0.6 will more interactive commands. I think I have not been adding enough
 - **More readable comments**
 - **Better command names**
 - **More readable code**
-- **Description change:** GItHub link added
+- **Description change:** GitHub link added
 
 > **All updates can be found in OutMyth's Discord server in the channel "bot-updates" and "dev-notes".**
-
-**OutMyth Discord Server:** https://discord.gg/Sc5vAvTJtc
 
 ---
 
@@ -194,10 +191,9 @@ Update 0.6 will more interactive commands. I think I have not been adding enough
 
 - **Name change** Outmyth Ai ---> OutBot
 - **Description added**
-- **Out Bot's will be on GitHub in the couple of days days.**
 - **Command Prefix is**  '/' (**Update 0.3 will add !**)
-- **Swear word filter** - I will add all censored words in update 0.3 - Currently if you say the words in the screenshot, it will delete your message and ping you. "@{user} - Don't say that word!"
-- **Bot Commands Added** - /hello ,/outmyth ,/outmyth_history ,/dm /poll ,/bot_help,. Again more commands will be added in update 0.3 and the following updates. If you want to know what each command does, type /help in #🤖┃chatbot or #💻┃commands . Or you can read the code once it's on GitHub.
+- **Swear word filter** 
+- **Bot Commands Added** - /hello ,/outmyth ,/outmyth_history ,/dm /poll ,/bot_help. updates. If you want to know what each command does, type /help
 - **All bot commands work in the bot's Dms.**
 
 ---

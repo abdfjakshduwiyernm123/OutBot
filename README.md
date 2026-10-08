@@ -34,7 +34,7 @@ OutBot is an open source, privacy respecting Discord utility bot built using **d
 
 OutBot uses **NO** privileged intents. OutBot does **NOT** use **ANY GATEWAY INTENTS**. Intents will be covered in more detail [here](#intents).
 
-[![GitHub Release](https://img.shields.io/github/v/release/abdfjakshduwiyernm123/OutBot)](https://github.com/abdfjakshduwiyernm123/OutBot/releases/latest)
+[![OutBot's Version](https://img.shields.io/github/v/release/someVeryCoolProgrammer/OutBot)](https://github.com/someVeryCoolProgrammer/OutBot/releases/latest)
 
 ## Intents
 
@@ -88,7 +88,7 @@ Open source is when a project's source code is available. Users can modify, dist
 
 # Useful Links
 
-[OutBot's TOS](https://github.com/abdfjakshduwiyernm123/OutBot/blob/main/TERMS.md) | [OutBot's Privacy Policy](https://github.com/abdfjakshduwiyernm123/OutBot/blob/main/PRIVACY.md) | [OutBot's Security Policy](https://github.com/abdfjakshduwiyernm123/OutBot?tab=security-ov-file) | [OutBot's License](https://github.com/abdfjakshduwiyernm123/OutBot/?tab=MIT-1-ov-file) | [OutBot's Invite Link Guild (Server)](https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=bot%20applications.commands) | [OutBot's Invite Link (User)](https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=applications.commands)
+[OutBot's TOS](https://github.com/someVeryCoolProgrammer/OutBot/blob/main/TERMS.md) | [OutBot's Privacy Policy](https://github.com/someVeryCoolProgrammer/OutBot/blob/main/PRIVACY.md) | [OutBot's Security Policy](https://github.com/someVeryCoolProgrammer/OutBot?tab=security-ov-file) | [OutBot's License](https://github.com/someVeryCoolProgrammer/OutBot/?tab=MIT-1-ov-file) | [OutBot's Invite Link Guild (Server)](https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=bot%20applications.commands) | [OutBot's Invite Link (User)](https://discord.com/oauth2/authorize?client_id=1525595736706781384&scope=applications.commands)
 
 ---
 
@@ -157,7 +157,7 @@ pip3 install -r requirements/tests.txt
 ## Getting A Local Copy Of OutBot
 
 ```shell
-git clone https://github.com/abdfjakshduwiyernm123/OutBot.git
+git clone https://github.com/someVeryCoolProgrammer/OutBot.git
 ```
 
 ```shell
