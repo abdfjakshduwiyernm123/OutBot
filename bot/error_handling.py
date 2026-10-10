@@ -36,11 +36,11 @@ async def on_app_command_error(
             f"I'm missing these permissions: \n- `{permissions}`\n",
             ephemeral=True,
         )
-        
+
     elif isinstance(error, app_commands.CommandNotFound):
         await response_check(
             interaction,
-            f"That command does not exist anymore.",
+            "That command does not exist anymore.",
             ephemeral=True,
         )
 
@@ -50,8 +50,6 @@ async def on_app_command_error(
             f"Something went wrong while executing this command. Please open a ticket or a GitHub issue ({GITHUB_LINK})",
             ephemeral=True,
         )
-
-
 
     else:
         await response_check(

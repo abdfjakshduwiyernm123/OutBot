@@ -45,12 +45,12 @@ class ModerationCommands(app_commands.Group):
 
         if guild is None:
             await interaction.followup.send(
-                "This command can only be used in (guilds).",
+                "This command can only be used in servers(guilds).",
                 ephemeral=True,
             )
             return
 
-        bot = guild.get_member(self.bot.user.id)
+        bot_member = guild.get_member(self.bot_user.id)
 
         if bot is None:
             await interaction.followup.send(
@@ -59,7 +59,7 @@ class ModerationCommands(app_commands.Group):
             return
 
         if user == interaction.user:
-            await interaction.followup.send("You cannot ban yourself.", ephemeral=True)
+            await interaction.followup.send("You cannot ban yourself.", ephemeral=True) # pyright: ignore[reportOptionalMemberAccess]
             return
 
         if user.id == guild.owner_id:
