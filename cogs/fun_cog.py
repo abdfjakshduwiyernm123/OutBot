@@ -6,7 +6,7 @@ from utils import FreeNitroButton, send_censor_word_warning
 
 
 class FunCommands(app_commands.Group):
-    """Commands for user's to have fun."""
+    """Commands for user's to have fun"""
 
     def __init__(self) -> None:
         super().__init__(name="fun")

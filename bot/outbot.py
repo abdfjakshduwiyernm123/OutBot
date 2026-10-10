@@ -26,5 +26,4 @@ class OutBot(discord.Client):
             module = importlib.import_module(f"cogs.{module_name}")
 
             if hasattr(module, "setup"):
-                command_group = module.setup(self)
-                self.tree.add_command(command_group)
+                self.tree.add_command(module.setup(self))

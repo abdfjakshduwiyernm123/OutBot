@@ -10,7 +10,7 @@ class ModerationCommands(app_commands.Group):
 
     def __init__(self, bot) -> None:
         super().__init__(name="moderation")
-        self.bot = bot
+        self.bot: OutBot = bot
 
     @app_commands.command(name="ban", description="Moderation ban a member")
     @app_commands.guild_only()

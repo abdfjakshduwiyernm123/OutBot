@@ -4,8 +4,7 @@ import discord
 from discord import app_commands
 
 from bot import OutBot
-from config import EMOJIS
-from utils import send_censor_word_warning
+from utils import EMOJIS, send_censor_word_warning
 
 
 class GeneralCommands(app_commands.Group):

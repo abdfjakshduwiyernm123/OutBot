@@ -1,5 +1,6 @@
 from .developer_cog import DeveloperCommands
 from .fun_cog import FunCommands
+from .games_cog import GamesCommands
 from .general_cog import GeneralCommands
 from .information_cog import InformationCommands
 from .links_cog import LinksCommands
@@ -11,6 +12,7 @@ from .support_cog import SupportCommands
 __all__: list[str] = [
     "DeveloperCommands",
     "FunCommands",
+    "GamesCommands",
     "GeneralCommands",
     "InformationCommands",
     "LinksCommands",
